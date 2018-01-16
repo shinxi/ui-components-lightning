@@ -10,7 +10,7 @@ import {
   PageHeaderDetailBody,
   PageHeaderDetailLabel,
   Icon, Crumb, Button, ButtonGroup, DropdownButton, MenuItem, Text, Grid,
-} from '../src/scripts';
+} from '../lib/scripts';
 
 storiesOf('PageHeader', module)
   .add('Base', withInfo('Default Page Header')(() => (

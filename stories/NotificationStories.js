@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import { Notification, Alert, Toast } from '../src/scripts';
+import { Notification, Alert, Toast } from '../lib/scripts';
 
 storiesOf('Notification', module)
   .add('Controlled with knobs', withInfo('Notification controlled with knobs')(() => {

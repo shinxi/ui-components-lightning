@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean } from '@storybook/addon-knobs';
-import { RadioGroup, Radio } from '../src/scripts';
+import { RadioGroup, Radio } from '../lib/scripts';
 
 storiesOf('Radio', module)
   .add('Controlled with knobs', withInfo('Radio Group controlled with knobs')(() => (

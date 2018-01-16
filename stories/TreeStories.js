@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
-import { Tree, TreeNode } from '../src/scripts';
+import { Tree, TreeNode } from '../lib/scripts';
 
 
 storiesOf('Tree', module)

@@ -5,7 +5,7 @@ import { withInfo } from '@storybook/addon-info';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import {
   Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
-} from '../src/scripts';
+} from '../lib/scripts';
 
 const { Header, Content, Footer } = Modal;
 const { Row } = FieldSet;

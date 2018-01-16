@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { MediaObject, util } from '../src/scripts';
+import { MediaObject, util } from '../lib/scripts';
 
 const image1 = (
   <img

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Badge from '../src/scripts/Badge';
+import Badge from '../lib/scripts/Badge';
 
 describe('Badge', () => {
   it('should render badge with className', () => {

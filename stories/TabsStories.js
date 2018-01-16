@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
-import { Tabs, Tab, Icon, MenuItem } from '../src/scripts';
+import { Tabs, Tab, Icon, MenuItem } from '../lib/scripts';
 
 function createMenu() {
   return [1, 2, 3].map(i => <MenuItem key={i}>Item #{i}</MenuItem>);

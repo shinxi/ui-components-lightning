@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
-import { Textarea } from '../src/scripts';
+import { Textarea } from '../lib/scripts';
 
 storiesOf('Textarea', module)
   .add('Controlled with knobs', withInfo('Textarea controlled with knobs')(() => (

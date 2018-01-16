@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button, { ButtonIcon } from '../src/scripts/Button';
-import Icon from '../src/scripts/Icon';
+import Button, { ButtonIcon } from '../lib/scripts/Button';
+import Icon from '../lib/scripts/Icon';
 
 describe('Button', () => {
   it('should render button with className', () => {

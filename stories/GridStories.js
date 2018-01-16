@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { Grid, Row, Col } from '../src/scripts';
+import { Grid, Row, Col } from '../lib/scripts';
 
 const Box = ({ children }) => {
   const styles = {

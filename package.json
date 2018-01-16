@@ -1,8 +1,8 @@
 {
-  "name": "react-lightning-design-system",
-  "version": "2.5.7",
-  "description": "Salesforce Lightning Design System components built with React",
-  "main": "lib/scripts/index.js",
+  "name": "@svmx/react-lightning-design-system",
+  "version": "2.5.8",
+  "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
+  "main": "build/scripts/index.js",
   "keywords": [
     "react",
     "react-component",
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mashmatrix/react-lightning-design-system.git"
+    "url": "https://github.com/ServiceMax-Engineering/react-lightning-design-system.git"
   },
   "scripts": {
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
@@ -25,18 +25,18 @@
     "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
     "test:jest": "jest test/*-spec.js",
     "prepublish": "npm run build",
-    "lint": "npm run lint:src && npm run lint:stories && npm run lint:test",
-    "lint:src": "eslint --ext .js src/scripts/**",
+    "lint": "npm run lint:lib && npm run lint:stories && npm run lint:test",
+    "lint:lib": "eslint --ext .js lib/scripts/**",
     "lint:stories": "eslint --ext .js stories/**",
     "lint:test": "eslint --ext .js test/**",
-    "build": "babel -d lib/ src/",
+    "build": "babel -d build/ lib/",
     "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
     "build:storybook": "build-storybook -o public",
     "deploy": "npm-run-all build:storybook build:assets deploy:ghpage",
     "deploy:ghpage": "gh-pages -d public"
   },
   "files": [
-    "lib"
+    "build"
   ],
   "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
   "license": "MIT",

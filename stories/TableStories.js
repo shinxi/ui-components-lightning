@@ -11,7 +11,7 @@ import {
   TableRowColumn,
   TableRowColumnActions,
   DropdownButton, MenuItem,
-} from '../src/scripts';
+} from '../lib/scripts';
 
 const headerNames = 'Opportunity Name,Account Name,Close Date,Stage,Confidence,Amount,Contact'.split(',');
 
