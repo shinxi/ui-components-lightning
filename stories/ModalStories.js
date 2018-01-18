@@ -14,7 +14,6 @@ const LOOKUP_DATA = [
   { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
 ];
 
-
 storiesOf('Modal', module)
   .add('Controlled with knobs', withInfo({
     text: 'Modal controlled with knobs',
@@ -168,5 +167,4 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  )))
-;
+  )));
