@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, select } from '@storybook/addon-knobs';
-import { Icon } from '../src/scripts';
+import { Icon } from './../lib';
 
 const iconListItemStyle = {
   float: 'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center',

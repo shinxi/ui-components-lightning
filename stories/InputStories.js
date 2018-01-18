@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import { Input } from '../src/scripts';
+import { Input } from './../lib';
 
 storiesOf('Input', module)
   .add('Controlled with knobs', withInfo('Input controlled with knobs')(() => {

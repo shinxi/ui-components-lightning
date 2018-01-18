@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean, object } from '@storybook/addon-knobs';
-import { Button, Lookup } from '../src/scripts';
+import { Button, Lookup } from './../lib/';
 import COMPANIES from './data/COMPANIES';
 import OPPORTUNITIES from './data/OPPORTUNITIES';
 import CAMPAIGNS from './data/CAMPAIGNS';

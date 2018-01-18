@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text } from '@storybook/addon-knobs';
-import { Datepicker, Button } from '../src/scripts';
+import { Datepicker, Button } from './../lib';
 
 const TodayButtonExtensionRenderer = (props) => {
   const { onSelect } = props; // eslint-disable-line react/prop-types

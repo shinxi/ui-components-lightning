@@ -1,6 +1,7 @@
 node_modules
 npm-debug.log*
-lib/*
+dist/*
 .idea
+.DS_Store
 
 coverage

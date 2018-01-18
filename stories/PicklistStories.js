@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean } from '@storybook/addon-knobs';
-import { Picklist, PicklistItem } from '../src/scripts';
+import { Picklist, PicklistItem } from './../lib';
 
 storiesOf('Picklist', module)
   .add('Controlled with knobs', withInfo('Picklist controlled with knobs')(() => (

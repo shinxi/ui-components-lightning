@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { BreadCrumbs, Crumb } from '../src/scripts';
+import { BreadCrumbs, Crumb } from './../lib';
 
 storiesOf('BreadCrumbs', module)
   .add('Default', withInfo('Default BreadCrumbs')(() => (

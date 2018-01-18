@@ -2,8 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { select } from '@storybook/addon-knobs';
-import { Spinner } from '../src/scripts';
-
+import { Spinner } from './../lib';
 
 const containerStyle = { position: 'relative', width: 100, height: 100, display: 'inline-block' };
 const inverseContainerStyle = Object.assign({}, containerStyle, { background: '#16325C' });

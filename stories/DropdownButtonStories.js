@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import { DropdownButton, MenuItem } from '../src/scripts';
+import { DropdownButton, MenuItem } from './../lib';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };

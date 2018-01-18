@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import {
-  Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
-} from '../src/scripts';
+import { Modal, Button, Form, FieldSet, Input, DateInput, Lookup, Picklist, PicklistItem } from './../lib';
 
 const { Header, Content, Footer } = Modal;
 const { Row } = FieldSet;
@@ -15,7 +13,6 @@ const LOOKUP_DATA = [
   { label: 'Contact', value: '2', icon: 'standard:contact' },
   { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
 ];
-
 
 storiesOf('Modal', module)
   .add('Controlled with knobs', withInfo({
@@ -170,5 +167,4 @@ storiesOf('Modal', module)
         <Button type='brand' label='Done' />
       </Footer>
     </Modal>
-  )))
-;
+  )));
