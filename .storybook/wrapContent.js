@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import ComponentSettings from './../lib/utils/ComponentSettings';
+import ComponentSettings from './../lib/components/utils/ComponentSettings';
 
 export default function wrapContent(options) {
   return story => (

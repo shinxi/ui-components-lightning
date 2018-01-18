@@ -2,7 +2,7 @@
   "name": "@svmx/react-lightning-design-system",
   "version": "2.5.8",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
-  "main": "build/scripts/index.js",
+  "main": "dist/scripts/index.js",
   "keywords": [
     "react",
     "react-component",
@@ -26,17 +26,17 @@
     "test:jest": "jest test/*-spec.js",
     "prepublish": "npm run build",
     "lint": "npm run lint:lib && npm run lint:stories && npm run lint:test",
-    "lint:lib": "eslint --ext .js lib/scripts/**",
+    "lint:lib": "eslint --ext .js lib/**",
     "lint:stories": "eslint --ext .js stories/**",
     "lint:test": "eslint --ext .js test/**",
-    "build": "babel -d build/ lib/",
+    "build": "babel -d dist/ lib/",
     "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
     "build:storybook": "build-storybook -o public",
     "deploy": "npm-run-all build:storybook build:assets deploy:ghpage",
     "deploy:ghpage": "gh-pages -d public"
   },
   "files": [
-    "build"
+    "dist"
   ],
   "author": "ServiceMax",
   "license": "MIT",
