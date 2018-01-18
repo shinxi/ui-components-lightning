@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { ButtonGroup, Button, DropdownButton, MenuItem } from '../lib/scripts';
+import { ButtonGroup, Button, DropdownButton, MenuItem } from './../lib';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 

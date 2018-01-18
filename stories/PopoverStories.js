@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { select, boolean } from '@storybook/addon-knobs';
-import { Popover } from '../lib/scripts';
+import { Popover } from './../lib';
 
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe

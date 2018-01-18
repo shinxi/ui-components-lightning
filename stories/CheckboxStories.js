@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean } from '@storybook/addon-knobs';
-import { CheckboxGroup, Checkbox } from '../lib/scripts';
+import { CheckboxGroup, Checkbox } from './../lib';
 
 storiesOf('Checkbox', module)
   .add('Controlled with knobs', withInfo('Checkbox controlled with knobs')(() => (

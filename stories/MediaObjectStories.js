@@ -1,18 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { MediaObject, util } from '../lib/scripts';
+import { MediaObject, getAssetRoot } from './../lib';
 
 const image1 = (
   <img
-    src={ `${util.getAssetRoot()}/images/avatar1.jpg` }
+    src={ `${getAssetRoot()}/images/avatar1.jpg` }
     style={{ height: 100 }}
     alt='Placeholder'
   />
 );
 const image2 = (
   <img
-    src={ `${util.getAssetRoot()}/images/avatar2.jpg` }
+    src={ `${getAssetRoot()}/images/avatar2.jpg` }
     style={{ height: 100 }}
     alt='Placeholder'
   />

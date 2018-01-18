@@ -10,8 +10,9 @@ import {
   TableRow,
   TableRowColumn,
   TableRowColumnActions,
-  DropdownButton, MenuItem,
-} from '../lib/scripts';
+  DropdownButton,
+  MenuItem,
+} from './../lib';
 
 const headerNames = 'Opportunity Name,Account Name,Close Date,Stage,Confidence,Amount,Contact'.split(',');
 

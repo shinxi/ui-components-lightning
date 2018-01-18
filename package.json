@@ -38,7 +38,7 @@
   "files": [
     "build"
   ],
-  "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
+  "author": "ServiceMax",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.6.1",

@@ -2,17 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import {
-  Form, FieldSet,
-  Input, Textarea,
-  CheckboxGroup, Checkbox,
-  RadioGroup, Radio,
-  Select, Option,
-  Picklist, PicklistItem,
-  DateInput,
-  Lookup,
-  Button,
-} from '../lib/scripts';
+import { Form, FieldSet, Input, Textarea, Checkbox, CheckboxGroup, Radio, RadioGroup, Select,
+  Option, Picklist, PicklistItem, DateInput, Lookup, Button } from './../lib';
 
 const { Row } = FieldSet;
 

@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import {
-  Modal, Button, Form, FieldSet, Input, DateInput, Picklist, PicklistItem, Lookup,
-} from '../lib/scripts';
+import { Modal, Button, Form, FieldSet, Input, DateInput, Lookup, Picklist, PicklistItem } from './../lib';
 
 const { Header, Content, Footer } = Modal;
 const { Row } = FieldSet;
