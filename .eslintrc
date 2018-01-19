@@ -2,7 +2,10 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "env": {
-    "browser": true
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
   },
   "rules": {
     "jsx-quotes": [2, "prefer-single"],

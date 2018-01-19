@@ -1,5 +1,5 @@
 {
-  "name": "@svmx/react-lightning-design-system",
+  "name": "@svmx/ui-components-lightning",
   "version": "2.5.8",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "dist/scripts/index.js",
@@ -17,18 +17,25 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ServiceMax-Engineering/react-lightning-design-system.git"
+    "url": "https://github.com/ServiceMax-Engineering/ui-components-lightning.git"
   },
   "scripts": {
+    "cov": "jest --coverage",
+    "cov:open": "open coverage/lcov-report/index.html",
+    "cov:watch": "npm run cov -- --watch",
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
-    "test": "npm-run-all test:jest test:storyshots",
-    "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
-    "test:jest": "jest test/*-spec.js",
-    "prepublish": "npm run build",
-    "lint": "npm run lint:lib && npm run lint:stories && npm run lint:test",
-    "lint:lib": "eslint --ext .js lib/**",
+    "test": "jest",
+    "test-junit-report": "mkdir -p report && CI=true JEST_JUNIT_OUTPUT=report/junit.xml jest --ci --testResultsProcessor ./node_modules/jest-junit",
+    "test:watch": "npm run test -- --watch",
+    "prepare": "npm run build",
+    "lint": "eslint lib; exit 0",
+    "lint-fix": "eslint lib --fix; exit 0",
+    "lint-style": "stylelint --f string --syntax scss lib/**/*.scss; exit 0",
+    "lint-report": "mkdir -p report && npm run lint-js-report && npm run lint-style-report",
+    "lint-js-report": "eslint -f checkstyle lib > report/eslint.xml; exit 0",
+    "lint-style-report": "stylelint --custom-formatter=scripts/stylelintCheckStyleFormatter --syntax scss lib/**/*.scss > report/stylelint.xml",
+    "lint:watch": "esw -w lib/**",
     "lint:stories": "eslint --ext .js stories/**",
-    "lint:test": "eslint --ext .js test/**",
     "build": "babel -d dist/ lib/",
     "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
     "build:storybook": "build-storybook -o public",
@@ -60,7 +67,7 @@
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
     "babel-eslint": "^7.0.0",
-    "babel-jest": "^16.0.0",
+    "babel-jest": "^21.2.0",
     "babel-plugin-espower": "^2.1.2",
     "babel-plugin-transform-class-properties": "^6.19.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -68,23 +75,47 @@
     "babel-polyfill": "^6.20.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
-    "enzyme": "^2.3.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.1",
     "eslint": "3.8.1",
     "eslint-config-airbnb": "12.0.0",
     "eslint-plugin-import": "1.16.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
     "gh-pages": "^0.12.0",
-    "jest": "^16.0.2",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "jest-junit": "^3.0.0",
     "npm-run-all": "^4.0.1",
     "power-assert": "^1.4.1",
     "react": "^15.6.2",
-    "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^15.6.2",
     "react-test-renderer": "^15.6.2"
   },
+  "env": {
+    "test": {
+      "presets": [
+        "react"
+      ]
+    }
+  },
   "jest": {
-    "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
-    "collectCoverage": true
+    "roots": [
+      "lib"
+    ],
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "lib/**/*.{js,jsx}",
+      "!lib/**/index.js"
+    ],
+    "setupTestFrameworkScriptFile": "./test/jest-setup.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
   }
 }

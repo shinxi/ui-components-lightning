@@ -1,0 +1,114 @@
+<testsuites name="jest tests">
+  <testsuite name="Picklist" tests="5" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:27" time="1.283">
+    <testcase classname="Picklist should render picklist with className" name="Picklist should render picklist with className" time="0.011">
+    </testcase>
+    <testcase classname="Picklist should render with sub-items if defaultOpened is provided" name="Picklist should render with sub-items if defaultOpened is provided" time="0.042">
+    </testcase>
+    <testcase classname="Picklist click should open/close sub-items" name="Picklist click should open/close sub-items" time="0.022">
+    </testcase>
+    <testcase classname="Picklist click should trigger onValueChange with a single value" name="Picklist click should trigger onValueChange with a single value" time="0.011">
+    </testcase>
+    <testcase classname="Picklist click on multiselect should trigger onValueChange with a array value" name="Picklist click on multiselect should trigger onValueChange with a array value" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="Notification" tests="7" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:29" time="0.435">
+    <testcase classname="Notification should render notification with className" name="Notification should render notification with className" time="0.001">
+    </testcase>
+    <testcase classname="Notification should render notification with inner content" name="Notification should render notification with inner content" time="0.001">
+    </testcase>
+    <testcase classname="Notification should render notification with level" name="Notification should render notification with level" time="0">
+    </testcase>
+    <testcase classname="Notification should render notification with icon" name="Notification should render notification with icon" time="0.005">
+    </testcase>
+    <testcase classname="Notification should render notification with onClose callback" name="Notification should render notification with onClose callback" time="0.002">
+    </testcase>
+    <testcase classname="Notification should render alert" name="Notification should render alert" time="0.003">
+    </testcase>
+    <testcase classname="Notification should render toast" name="Notification should render toast" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Icon" tests="4" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:29" time="0.279">
+    <testcase classname="Icon should render icon" name="Icon should render icon" time="0.002">
+    </testcase>
+    <testcase classname="Icon should render icon with size" name="Icon should render icon with size" time="0">
+    </testcase>
+    <testcase classname="Icon should render icon with category" name="Icon should render icon with category" time="0.001">
+    </testcase>
+    <testcase classname="Icon should render icon with category:icon notation" name="Icon should render icon with category:icon notation" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button" tests="19" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:29" time="0.266">
+    <testcase classname="Button should render button with className" name="Button should render button with className" time="0.001">
+    </testcase>
+    <testcase classname="Button should render button with children" name="Button should render button with children" time="0.002">
+    </testcase>
+    <testcase classname="Button should render button with specific className" name="Button should render button with specific className" time="0">
+    </testcase>
+    <testcase classname="Button should render button with label" name="Button should render button with label" time="0">
+    </testcase>
+    <testcase classname="Button should render button with alt" name="Button should render button with alt" time="0.002">
+    </testcase>
+    <testcase classname="Button should render button based on a type" name="Button should render button based on a type" time="0">
+    </testcase>
+    <testcase classname="Button should render button based on a size" name="Button should render button based on a size" time="0">
+    </testcase>
+    <testcase classname="Button should render button based on htmlType" name="Button should render button based on htmlType" time="0.001">
+    </testcase>
+    <testcase classname="Button should render disabled button" name="Button should render disabled button" time="0">
+    </testcase>
+    <testcase classname="Button should render selected button" name="Button should render selected button" time="0">
+    </testcase>
+    <testcase classname="Button should render button with icon based on size and align" name="Button should render button with icon based on size and align" time="0.003">
+    </testcase>
+    <testcase classname="Button should render button with icon more" name="Button should render button with icon more" time="0.001">
+    </testcase>
+    <testcase classname="Button should render button with props" name="Button should render button with props" time="0">
+    </testcase>
+    <testcase classname="ButtonIcon should render button icon with className" name="ButtonIcon should render button icon with className" time="0.001">
+    </testcase>
+    <testcase classname="ButtonIcon should render button icon with specific className" name="ButtonIcon should render button icon with specific className" time="0">
+    </testcase>
+    <testcase classname="ButtonIcon should render button icon based on align" name="ButtonIcon should render button icon based on align" time="0">
+    </testcase>
+    <testcase classname="ButtonIcon should render button icon based on size" name="ButtonIcon should render button icon based on size" time="0.001">
+    </testcase>
+    <testcase classname="ButtonIcon should render button icon inversed" name="ButtonIcon should render button icon inversed" time="0">
+    </testcase>
+    <testcase classname="ButtonIcon should call Icon component with props" name="ButtonIcon should call Icon component with props" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Form" tests="1" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:30" time="0.253">
+    <testcase classname="Form should not render null children" name="Form should not render null children" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Text" tests="4" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:30" time="0.229">
+    <testcase classname="Text should render badge with category and type" name="Text should render badge with category and type" time="0.001">
+    </testcase>
+    <testcase classname="Text should render badge with align" name="Text should render badge with align" time="0.001">
+    </testcase>
+    <testcase classname="Text should render truncated" name="Text should render truncated" time="0">
+    </testcase>
+    <testcase classname="Text should render badge with tag" name="Text should render badge with tag" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Crumb" tests="4" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:30" time="0.231">
+    <testcase classname="Crumb should have classNames" name="Crumb should have classNames" time="0.001">
+    </testcase>
+    <testcase classname="Crumb should render link" name="Crumb should render link" time="0">
+    </testcase>
+    <testcase classname="BreadCrumbs should render breadcrumbs with items" name="BreadCrumbs should render breadcrumbs with items" time="0.001">
+    </testcase>
+    <testcase classname="BreadCrumbs should render breadcrumbs with label" name="BreadCrumbs should render breadcrumbs with label" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Badge" tests="4" errors="0" failures="0" skipped="0" timestamp="2018-01-19T17:56:30" time="0.231">
+    <testcase classname="Badge should render badge with className" name="Badge should render badge with className" time="0.001">
+    </testcase>
+    <testcase classname="Badge should render badge with label" name="Badge should render badge with label" time="0.001">
+    </testcase>
+    <testcase classname="Badge should render button with children" name="Badge should render button with children" time="0">
+    </testcase>
+    <testcase classname="Badge should render badge based on a type" name="Badge should render badge based on a type" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
