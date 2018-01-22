@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import { Button } from './../lib';
+import { Button, ButtonIcon } from './../lib/components/Button';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
@@ -90,14 +90,16 @@ const stories = storiesOf('Button', module)
   )))
   .add('Destructive disabled', withInfo('Destructive type button but disabled')(() => (
     <Button type='destructive' disabled onClick={ action('should not be clicked') }>Disabled Destructive</Button>
-  )))
+  )))  
   .add('Neutral with left icon', withInfo('Neutral type button with download icon in left side')(() => (
-    <Button type='neutral' icon='download' iconAlign='left' onClick={ action('neutral button icon left clicked') }>
+    <Button type='neutral' onClick={action('neutral button icon left clicked')}>
+      <ButtonIcon icon='download' align='left' />
       Button Neutral
     </Button>
   )))
   .add('Neutral with right icon', withInfo('Neutral type button with down icon in right side')(() => (
-    <Button type='neutral' icon='down' iconAlign='right' onClick={ action('neutral button icon right clicked') }>
+    <Button type='neutral' onClick={ action('neutral button icon right clicked') }>
+      <ButtonIcon icon='down' align='right' />
       Button Neutral
     </Button>
   )))
@@ -112,29 +114,41 @@ const stories = storiesOf('Button', module)
     </div>
   )))
   .add('Button Icon', withInfo('Default button with icon')(() => (
-    <Button type='icon' icon='settings' onClick={ action('button icon clicked') } />
+    <Button type='icon' onClick={ action('button icon clicked') } >
+      <ButtonIcon icon='settings' align='left' />
+    </Button>
   )))
   .add('Button Icon Container', withInfo('Button with icon in container')(() => (
-    <Button type='icon-container' icon='settings' onClick={ action('button icon container button clicked') } />
+    <Button type='icon-container' onClick={ action('button icon container button clicked') } >
+      <ButtonIcon icon='settings' align='left' />
+    </Button>
   )))
   .add('Button Icon Border', withInfo('Button with icon of bordered')(() => (
-    <Button type='icon-border' icon='settings' onClick={ action('button icon border clicked') } />
+    <Button type='icon-border' onClick={ action('button icon border clicked') } >
+      <ButtonIcon icon='settings' align='left' />
+    </Button>
   )))
   .add('Button Icon Border and Filled', withInfo('Button with icon of bordered and filled with white')(() => (
     <div style={ lightBgStyle }>
-      <Button type='icon-border-filled' icon='settings' onClick={ action('button icon border and filled button clicked') } />
+      <Button type='icon-border-filled' onClick={ action('button icon border and filled button clicked') } >
+        <ButtonIcon icon='settings' align='left' />
+      </Button>
     </div>
   )))
   .add('Button Icon Inverse', withInfo('Button with icon in dark background')(() => (
     <div style={ darkBgStyle }>
-      <Button type='icon-inverse' icon='close' onClick={ action('button icon inverse button clicked') } />
+      <Button type='icon-inverse' onClick={ action('button icon inverse button clicked') }>
+        <ButtonIcon icon='close' align='left' />
+      </Button>
     </div>
   )))
   .add('Button Icon Inverse in dark background', withInfo('Button with icon in dark background')(() => (
     <div style={ darkBgStyle }>
-      <Button type='icon-inverse' icon='close' disabled onClick={ action('should not be clicked') } />
+      <Button type='icon-inverse' icon='close' disabled onClick={ action('should not be clicked') } >
+        <ButtonIcon icon='close' align='left' />
+      </Button>
     </div>
-  )))
+  )))  
 ;
 
 export default stories;
