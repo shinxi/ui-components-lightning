@@ -19,6 +19,7 @@ storiesOf('Input', module)
         error={ text('error') }
         required={ boolean('required') }
         value={ text('value') }
+        bare={ boolean('bare') }
         placeholder={ text('placeholder') }
         addonLeft={ text('addonLeft') }
         addonRight={ text('addonRight') }
