@@ -1,5 +1,5 @@
 {
-  "name": "@svmx/react-lightning-design-system",
+  "name": "@svmx/ui-components-lightning",
   "version": "2.5.8",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "dist/scripts/index.js",
@@ -17,23 +17,30 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ServiceMax-Engineering/react-lightning-design-system.git"
+    "url": "https://github.com/ServiceMax-Engineering/ui-components-lightning.git"
   },
   "scripts": {
-    "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
-    "test": "npm-run-all test:jest test:storyshots",
-    "test:storyshots": "NODE_ENV=test jest test/storyshots/*.test.js",
-    "test:jest": "jest test/*-spec.js",
-    "prepublish": "npm run build",
-    "lint": "npm run lint:lib && npm run lint:stories && npm run lint:test",
-    "lint:lib": "eslint --ext .js lib/**",
+    "cov": "jest --coverage",
+    "cov:open": "open coverage/lcov-report/index.html",
+    "cov:watch": "npm run cov -- --watch",
+    "test": "jest",
+    "test-junit-report": "mkdir -p report && CI=true JEST_JUNIT_OUTPUT=report/junit.xml jest --ci --testResultsProcessor ./node_modules/jest-junit",
+    "test:watch": "npm run test -- --watch",
+    "prepare": "npm run build",
+    "lint": "eslint lib; exit 0",
+    "lint-fix": "eslint lib --fix; exit 0",
+    "lint-style": "stylelint --f string --syntax scss lib/**/*.scss; exit 0",
+    "lint-report": "mkdir -p report && npm run lint-js-report && npm run lint-style-report",
+    "lint-js-report": "eslint -f checkstyle lib > report/eslint.xml; exit 0",
+    "lint-style-report": "stylelint --custom-formatter=scripts/stylelintCheckStyleFormatter --syntax scss lib/**/*.scss > report/stylelint.xml",
+    "lint:watch": "esw -w lib/**",
+    "watch": "esw -w lib/**;babel lib -w -d dist",
     "lint:stories": "eslint --ext .js stories/**",
-    "lint:test": "eslint --ext .js test/**",
+    "postinstall": "npm run build",
     "build": "babel -d dist/ lib/",
-    "build:assets": "cp -r node_modules/@salesforce-ux/design-system/assets public",
-    "build:storybook": "build-storybook -o public",
-    "deploy": "npm-run-all build:storybook build:assets deploy:ghpage",
-    "deploy:ghpage": "gh-pages -d public"
+    "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
+    "build-storybook": "build-storybook",
+    "sonar-scan": "sonar-scanner -Dsonar.issuesReport.html.enable=true && open .scannerwork/issues-report/issues-report.html"
   },
   "files": [
     "dist"
@@ -45,7 +52,6 @@
     "classnames": "^2.2.5",
     "keycoder": "^1.1.1",
     "moment": "^2.13.0",
-    "prop-types": "^15.6.0",
     "react-relative-portal": "github:stomita/react-relative-portal#dist",
     "svg4everybody": "^2.0.3",
     "uuid": "^2.0.2"
@@ -57,34 +63,67 @@
     "@storybook/addon-knobs": "3.2.17",
     "@storybook/addon-storyshots": "^3.2.17",
     "@storybook/react": "3.2.17",
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.18.0",
-    "babel-eslint": "^7.0.0",
-    "babel-jest": "^16.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-env": "^2.4.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-espower": "^2.1.2",
-    "babel-plugin-transform-class-properties": "^6.19.0",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-plugin-transform-runtime": "^6.8.0",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.5.0",
-    "enzyme": "^2.3.0",
-    "eslint": "3.8.1",
-    "eslint-config-airbnb": "12.0.0",
-    "eslint-plugin-import": "1.16.0",
-    "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-react": "6.4.1",
-    "gh-pages": "^0.12.0",
-    "jest": "^16.0.2",
-    "npm-run-all": "^4.0.1",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.1",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-react-app": "^2.0.0",
+    "eslint-import-resolver-babel-module": "^3.0.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-watch": "^3.1.2",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "jest-junit": "^3.0.0",
+    "polished": "^1.7.0",
     "power-assert": "^1.4.1",
+    "prettier": "^1.7.4",
+    "prettier-eslint": "^8.2.1",
+    "prop-types": "^15.6.0",
     "react": "^15.6.2",
-    "react-addons-test-utils": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-test-renderer": "^15.6.2"
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-test-renderer": "^15.6.2",
+    "sonarqube-scanner": "^2.0.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint-config-standard": "^17.0.0",
+    "yargs": "^9.0.1"
+  },
+  "env": {
+    "test": {
+      "presets": [
+        "react"
+      ]
+    }
   },
   "jest": {
-    "testRegex": "(/test/.*|\\.(test|spec))\\.js$",
-    "collectCoverage": true
+    "roots": [
+      "lib"
+    ],
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "lib/**/*.{js,jsx}",
+      "!lib/**/index.js"
+    ],
+    "setupTestFrameworkScriptFile": "./test/jest-setup.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
   }
 }

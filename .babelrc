@@ -1,9 +1,13 @@
 {
-  "presets": ["env", "react"],
-  "plugins": [
-     "transform-object-rest-spread",
-     "transform-runtime",
-     "transform-class-properties"
+  "presets": [
+    "env",
+    "react",
+    "stage-0"
   ],
-  "sourceMaps": "inline"
+  "plugins": [
+    "transform-class-properties",
+    "transform-decorators",
+    "transform-react-constant-elements",
+    "transform-react-inline-elements"
+  ]
 }
