@@ -6,11 +6,11 @@ import { text, boolean } from '@storybook/addon-knobs';
 
 import { Textarea } from './../lib';
 
-const onValueChange = (val) => {
+const onValueChange = (event) => {
   /**
    * use the callback return val
    */
-  console.log(val); // eslint-disable-line
+  console.log(event.target.value); // eslint-disable-line
 };
 
 storiesOf('Textarea', module)
@@ -68,23 +68,9 @@ storiesOf('Textarea', module)
     )),
   )
   .add(
-    'w/ Error',
-    withInfo('Textarea control with error message')(() => (
-      <Textarea
-        placeholder="Placeholder Text"
-        state="error"
-        required
-        error="This field is required"
-      />
-    )),
-  )
-  .add(
     'Controlled with knobs',
     withInfo('Textarea controlled with knobs')(() => (
       <Textarea
-        label={text('label', 'Textarea Label')}
-        error={text('error')}
-        required={boolean('required')}
         value={text('value')}
         placeholder={text('placeholder')}
         disabled={boolean('disabled')}
