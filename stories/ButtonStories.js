@@ -104,6 +104,12 @@ const stories = storiesOf('Button', module)
       <Icon icon="down" align="right" />
     </Button>
   )))
+  .add('Neutral with down icon', withInfo('Neutral type button with down icon in right side. Icon for "more" like feature')(() => (
+    <Button type="neutral" onClick={action('neutral button icon right clicked')}>
+      Button Neutral
+      <Icon icon="down" align="right" />
+    </Button>
+  )))
   .add('Inverse', withInfo('Inverse type button in dark background')(() => (
     <div style={darkBgStyle}>
       <Button type="inverse" onClick={action('inverse button clicked')}>Inverse</Button>
