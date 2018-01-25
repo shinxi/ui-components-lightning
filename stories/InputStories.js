@@ -15,62 +15,59 @@ storiesOf('Input', module)
     };
     return (
       <Input
-        label={ text('label', 'Input Label') }
-        error={ text('error') }
-        required={ boolean('required') }
-        value={ text('value') }
-        placeholder={ text('placeholder') }
-        addonLeft={ text('addonLeft') }
-        addonRight={ text('addonRight') }
-        iconLeft={ select('iconLeft', iconOptions) }
-        iconRight={ select('iconRight', iconOptions) }
-        disabled={ boolean('disabled') }
-        readOnly={ boolean('readOnly') }
-        onChange={ action('change') }
-        onBlur={ action('blur') }
+        label={text('label', 'Input Label')}
+        value={text('value')}
+        bare={boolean('bare')}
+        placeholder={text('placeholder')}
+        addonLeft={text('addonLeft')}
+        addonRight={text('addonRight')}
+        iconLeft={select('iconLeft', iconOptions)}
+        iconRight={select('iconRight', iconOptions)}
+        disabled={boolean('disabled')}
+        readOnly={boolean('readOnly')}
+        onValueChange={action('change')}
+        onBlur={action('blur')}
+        onFocus={action('focus')}
       />
     );
   }))
   .add('Default', withInfo('Default Input control')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' />
+    <Input label="Input Label" placeholder="Placeholder Text" />
   )))
   .add('With icon to the left', withInfo('Input control with icon to the left')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' iconLeft='search' />
+    <Input label="Input Label" placeholder="Placeholder Text" iconLeft="search" />
   )))
   .add('With icon to the right', withInfo('Input control with icon to the right')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' iconRight='search' />
+    <Input label="Input Label" placeholder="Placeholder Text" iconRight="search" />
   )))
   .add('With icon to the left & right', withInfo('Input control with icon to the left and right')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' iconLeft='search' iconRight='clear' />
+    <Input label="Input Label" placeholder="Placeholder Text" iconLeft="search" iconRight="clear" />
   )))
   .add('Required', withInfo('Input control with required attribute')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' required />
+    <Input label="Input Label" placeholder="Placeholder Text" required />
   )))
   .add('Error', withInfo('Input control with error message')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' required error='This field is required' />
+    <Input label="Input Label" placeholder="Placeholder Text" required error="This field is required" />
   )))
   .add('Error with icon', withInfo('Input control with error message and icon')(() => (
     <Input
-      label='Input Label'
-      placeholder='Placeholder Text'
+      label="Input Label"
+      placeholder="Placeholder Text"
       required
-      error='This field is required'
-      iconLeft='warning'
+      error="This field is required"
+      iconLeft="warning"
     />
   )))
   .add('Disabled', withInfo('Input control with disabled status')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' disabled />
+    <Input label="Input Label" placeholder="Placeholder Text" disabled />
   )))
   .add('Read only', withInfo('Input control with readOnly status')(() => (
-    <Input label='Input Label' value='Read Only' readOnly />
+    <Input label="Input Label" value="Read Only" readOnly />
   )))
-  .add('Read only (HTML)', withInfo('Input control with readOnly status (passsed to HTML <input> element)')(() => (
-    <Input label='Input Label' value='Read Only' htmlReadOnly />
+  .add('With add-on text', withInfo('Input control with add-on text to the left and right')(() => (
+    <Input label="Input Label" placeholder="Placeholder Text" addonLeft="$" addonRight="%" />
   )))
-  .add('With fixed text', withInfo('Input control with fixed text to the left and right')(() => (
-    <Input label='Input Label' placeholder='Placeholder Text' addonLeft='$' addonRight='%' />
-  )))
-  .add('Read only with fixed text', withInfo('Input control with fixed text to the left and right and readOnly status')(() => (
-    <Input label='Input Label' value='Read Only' addonLeft='$' addonRight='%' readOnly />
+  .add('Read only with add-on text', withInfo('Input control with add-on text to the left and right and readOnly status')(() => (
+    <Input label="Input Label" value="Read Only" addonLeft="$" addonRight="%" readOnly />
   )))
 ;
