@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { Grid, Row, Col } from './../lib';
+import { Grid, GridRow, GridItem } from './../lib';
 
 const Box = ({ children }) => {
   const styles = {
@@ -19,33 +19,48 @@ Box.propTypes = {
 };
 
 storiesOf('Grid', module)
-  .add('Equal Columns', withInfo('equal columns flex to the sides')(() => (
+.add('Equal width columns', withInfo('equal columns flex to the sides')(() => (
     <Grid>
-      <Row>
-        <Col><Box>A</Box></Col>
-        <Col><Box>B</Box></Col>
-        <Col><Box>C</Box></Col>
-      </Row>
+      <GridRow>
+        <GridItem><Box>A</Box></GridItem>
+        <GridItem><Box>B</Box></GridItem>
+        <GridItem><Box>C</Box></GridItem>
+      </GridRow>
     </Grid>
   )))
-  .add('Multiple Columns', withInfo('multiple columns, each column specified width, can specify any number of columns 1-6')(() => (
+  .add('Single flex column', withInfo('single column with flex pushing non flex column to the side')(() => (
     <Grid>
-      <Row cols={6}>
-        <Col cols={1}><Box>1/6</Box></Col>
-        <Col cols={2}><Box>2/6</Box></Col>
-        <Col cols={3}><Box>3/6</Box></Col>
-      </Row>
+      <GridRow>
+        <GridItem><Box>Flex</Box></GridItem>
+        <GridItem noFlex><Box>B</Box></GridItem>
+      </GridRow>
     </Grid>
   )))
-  .add('Weighted, no-flex', withInfo('columns with weighted, flex is disabled')(() => (
+  .add('Multiple columns with specified width', withInfo('multiple columns, each column specified width, can specify any number of columns 1-6')(() => (
     <Grid>
-      <Row cols={6}>
-        <Col cols={1} noFlex><Box>1/6 no flex</Box></Col>
-        <Col cols={1} noFlex><Box>1/6 no flex</Box></Col>
-        <Col cols={2} noFlex><Box>2/6 no flex</Box></Col>
-        <Col cols={3} noFlex><Box>3/6 no flex</Box></Col>
-        <Col cols={3} noFlex><Box>3/6 no flex</Box></Col>
-      </Row>
+      <GridRow cols={6}>
+        <GridItem cols={1}><Box>1/6</Box></GridItem>
+        <GridItem cols={2}><Box>2/6</Box></GridItem>
+        <GridItem cols={3}><Box>3/6</Box></GridItem>
+      </GridRow>
+    </Grid>
+  )))
+  .add('Multiple cols, no-flex', withInfo('multiple columns with flex disabled')(() => (
+    <Grid>
+      <GridRow>
+        <GridItem noFlex><Box>A no flex</Box></GridItem>
+        <GridItem noFlex><Box>B no flex</Box></GridItem>
+        <GridItem noFlex><Box>C no flex</Box></GridItem>
+      </GridRow>
+    </Grid>
+  )))
+  .add('Multiple cols, fixed width mixed w/ no-flex', withInfo('mixture of fixed width columns and columns where flex is disabled')(() => (
+    <Grid>
+      <GridRow cols={3}>
+        <GridItem noFlex><Box>A no flex</Box></GridItem>
+        <GridItem noFlex><Box>B no flex</Box></GridItem>
+        <GridItem cols={2} noFlex><Box>2/3</Box></GridItem>
+      </GridRow>
     </Grid>
   )))
 ;
