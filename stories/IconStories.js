@@ -62,7 +62,7 @@ storiesOf('Icon', module)
   .add('Standard Icons', withInfo('Icons in standard category')(() => (
     <ul className="slds-clearfix">
       {
-        Icon.ICONS.STANDARD_ICONS.map((icon, i) => (
+        Icon.icons.standard.map((icon, i) => (
           <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
               <Icon category="standard" icon={icon} onClick={action(`${icon}:click`)} />
@@ -76,7 +76,7 @@ storiesOf('Icon', module)
   .add('Custom Icons', withInfo('Icons in custom category')(() => (
     <ul className="slds-clearfix">
       {
-        Icon.ICONS.CUSTOM_ICONS.map((icon, i) => (
+        Icon.icons.custom.map((icon, i) => (
           <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
               <Icon category="custom" icon={icon} onClick={action(`${icon}:click`)} />
@@ -90,7 +90,7 @@ storiesOf('Icon', module)
   .add('Action Icons', withInfo('Icons in action category')(() => (
     <ul className="slds-clearfix">
       {
-        Icon.ICONS.ACTION_ICONS.map((icon, i) => (
+        Icon.icons.action.map((icon, i) => (
           <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
               <Icon category="action" icon={icon} container="circle" size="small" onClick={action(`${icon}:click`)} />
@@ -104,7 +104,7 @@ storiesOf('Icon', module)
   .add('Doctype Icons', withInfo('Icons in doctype category')(() => (
     <ul className="slds-clearfix">
       {
-        Icon.ICONS.DOCTYPE_ICONS.map((icon, i) => (
+        Icon.icons.doctype.map((icon, i) => (
           <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
               <Icon category="doctype" icon={icon} onClick={action(`${icon}:click`)} />
@@ -118,7 +118,7 @@ storiesOf('Icon', module)
   .add('Utility Icons', withInfo('Icons in utility category')(() => (
     <ul className="slds-clearfix">
       {
-        Icon.ICONS.UTILITY_ICONS.map((icon, i) => (
+        Icon.icons.utility.map((icon, i) => (
           <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
               <Icon category="utility" icon={icon} onClick={action(`${icon}:click`)} />
