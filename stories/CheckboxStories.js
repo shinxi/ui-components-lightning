@@ -37,7 +37,7 @@ storiesOf('Checkbox', module)
     'Multi Checkbox',
     withInfo('Checkbox control with different state')(() => (
       <CheckboxGroup label="Radio Group Label" onChange={onChanges}>
-        <Checkbox label="Checkbox Label One" value="1" checked={false} />
+        <Checkbox label="Checkbox Label One" value="1" checked />
         <Checkbox label="Checkbox Label Two" value="2" checked={false} />
       </CheckboxGroup>
     )),
