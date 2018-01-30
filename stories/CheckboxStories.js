@@ -37,8 +37,8 @@ storiesOf('Checkbox', module)
     'Multi Checkbox',
     withInfo('Checkbox control with different state')(() => (
       <CheckboxGroup label="Radio Group Label" onChange={onChanges}>
-        <Checkbox label="Checkbox Label One" value="1" checked />
-        <Checkbox label="Checkbox Label Two" value="2" checked={false} />
+        <Checkbox label="Checkbox Label One" value="1" isChecked />
+        <Checkbox label="Checkbox Label Two" value="2" />
       </CheckboxGroup>
     )),
   )
@@ -46,8 +46,8 @@ storiesOf('Checkbox', module)
     'Disabled Checkbox',
     withInfo('Checkbox control with disabled status')(() => (
       <CheckboxGroup label="Checkbox Group Label">
-        <Checkbox label="Checkbox Label One" value="1" disabled />
-        <Checkbox label="Checkbox Label Two" value="2" disabled />
+        <Checkbox label="Checkbox Label One" value="1" isDisabled />
+        <Checkbox label="Checkbox Label Two" value="2" isDisabled />
       </CheckboxGroup>
     )),
   )
@@ -61,14 +61,14 @@ storiesOf('Checkbox', module)
         <Checkbox
           label="Checkbox Label One"
           value="1"
-          disabled={boolean('disabled #1', false)}
-          checked={boolean('checked #1', false)}
+          isDisabled={boolean('disabled #1', false)}
+          isChecked={boolean('checked #1', false)}
         />
         <Checkbox
           label="Checkbox Label Two"
           value="2"
-          disabled={boolean('disabled #2', false)}
-          checked={boolean('checked #2', false)}
+          isDisabled={boolean('disabled #2', false)}
+          isChecked={boolean('checked #2', false)}
         />
       </CheckboxGroup>
     )),
