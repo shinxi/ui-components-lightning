@@ -26,16 +26,16 @@ storiesOf('Container', module)
     )(() => (
       <div>
         <Container>
-          <Box>Fluid (Default)</Box>
+          <Box>Fluid (Default, width: 100%)</Box>
         </Container>
         <Container size="small">
-          <Box>Small</Box>
+          <Box>Small (max-width: 30rem)</Box>
         </Container>
         <Container size="medium">
-          <Box>Medium</Box>
+          <Box>Medium (max-width: 48rem)</Box>
         </Container>
         <Container size="large">
-          <Box>Large</Box>
+          <Box>Large (max-width: 64rem)</Box>
         </Container>
       </div>
     )),
