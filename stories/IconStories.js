@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, select } from '@storybook/addon-knobs';
-import { Icon } from './../lib';
+import { Icon, IconContainer } from './../lib';
 
 const iconListItemStyle = {
   float: 'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center',
@@ -31,21 +31,22 @@ storiesOf('Icon', module)
     const icon = text('icon', 'account');
     const textColor = text('textColor');
     const fillColor = text('fillColor');
-    const containerOptions = {
+    const containerShapes = {
       '': '(none)',
       default: 'default',
       circle: 'circle',
     };
-    const container = select('container', containerOptions);
+    const shape = select('container', containerShapes);
     return (
-      <Icon
-        category={category}
-        size={size}
-        icon={icon}
-        textColor={textColor}
-        fillColor={fillColor}
-        container={container}
-      />
+      <IconContainer shape={shape}>
+        <Icon
+          category={category}
+          size={size}
+          icon={icon}
+          textColor={textColor}
+          fillColor={fillColor}
+        />
+      </IconContainer>
     );
   }))
   .add('Sizes', withInfo('Icon with different size (x-small, small, medium, large)')(() => (
@@ -95,6 +96,22 @@ storiesOf('Icon', module)
             <figure>
               <Icon category="action" icon={icon} container="circle" size="small" onClick={action(`${icon}:click`)} />
               <figcaption>{ icon }</figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  )))
+  .add('Action Icons with Icon Containers', withInfo('Icons in action category with container')(() => (
+    <ul className="slds-clearfix">
+      {
+        Icon.icons.action.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
+            <figure>
+              <IconContainer shape="circle">
+                <Icon category="action" icon={icon} size="small" onClick={action(`${icon}:click`)} />
+              </IconContainer>
+              <figcaption>{icon}</figcaption>
             </figure>
           </li>
         ))
