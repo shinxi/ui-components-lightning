@@ -95,6 +95,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-test-renderer": "^15.6.2",
+    "sinon": "^4.2.2",
     "sonarqube-scanner": "^2.0.2",
     "stylelint": "^8.1.1",
     "stylelint-config-sass-guidelines": "^3.1.0",
