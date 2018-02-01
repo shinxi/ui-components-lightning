@@ -11,7 +11,7 @@ const Box = ({ children }) => {
     color: '#fff',
     border: '1px solid #aaf',
   };
-  return <div style={ styles }>{ children }</div>;
+  return <div style={styles}>{ children }</div>;
 };
 
 Box.propTypes = {
