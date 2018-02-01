@@ -28,6 +28,13 @@ storiesOf('Grid', module)
       </GridRow>
     </Grid>
   )))
+  .add('Equal width columns, no containing Grid', withInfo('equal columns flex to the sides, no containing grid')(() => (
+    <GridRow>
+      <GridItem><Box>A</Box></GridItem>
+      <GridItem><Box>B</Box></GridItem>
+      <GridItem><Box>C</Box></GridItem>
+    </GridRow>
+  )))
   .add('Single flex column', withInfo('single column with flex pushing non flex column to the side')(() => (
     <Grid>
       <GridRow>
