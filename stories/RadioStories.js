@@ -36,9 +36,9 @@ storiesOf('Radio', module)
   .add(
     'Disabled',
     withInfo('Radio Group control with disabled status')(() => (
-      <RadioGroup label="Radio Group Label">
-        <Radio label="Radio Label One" value="1" disabled />
-        <Radio label="Radio Label Two" value="2" disabled />
+      <RadioGroup label="Radio Group Label" name="DisabledGroup">
+        <Radio label="Radio Label One" value="1" isDisabled />
+        <Radio label="Radio Label Two" value="2" isDisabled />
       </RadioGroup>
     )),
   )
@@ -47,20 +47,19 @@ storiesOf('Radio', module)
     withInfo('Radio Group controlled with knobs')(() => (
       <RadioGroup
         label={text('label', 'Radio Group Label')}
-        error={text('error')}
-        required={boolean('required')}
         onChange={action('change')}
+        name="KnobsControlledGroup"
       >
         <Radio
           label="Radio Label One"
           value="1"
-          disabled={boolean('disabled #1')}
+          isDisabled={boolean('disabled #1')}
           isChecked={text('value') === '1'}
         />
         <Radio
           label="Radio Label Two"
           value="2"
-          disabled={boolean('disabled #2')}
+          isDisabled={boolean('disabled #2')}
           isChecked={text('value') === '2'}
         />
       </RadioGroup>
