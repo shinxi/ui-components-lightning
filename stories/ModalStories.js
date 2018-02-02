@@ -19,20 +19,20 @@ const { Header, Content, Footer } = Modal;
 const { Row } = FieldSet;
 
 const LOOKUP_DATA = [
-  { label: 'Account', value: '1', icon: 'standard:account' },
-  { label: 'Contact', value: '2', icon: 'standard:contact' },
-  { label: 'Opportunity', value: '3', icon: 'standard:opportunity' },
+  { icon: 'standard:account', label: 'Account', value: '1' },
+  { icon: 'standard:contact', label: 'Contact', value: '2' },
+  { icon: 'standard:opportunity', label: 'Opportunity', value: '3' },
 ];
 
 storiesOf('Modal', module)
   .add(
     'Controlled with knobs',
     withInfo({
-      text: 'Modal controlled with knobs',
       inline: false,
+      text: 'Modal controlled with knobs',
     })(() => (
       <Modal
-        opened={boolean('opened', true)}
+        isOpened={boolean('isOpened', true)}
         size={select('size', { '': '(none)', large: 'large' })}
         onHide={action('hide')}
       >
@@ -73,10 +73,10 @@ storiesOf('Modal', module)
   .add(
     'Default',
     withInfo({
-      text: 'Default size modal dialog',
       inline: false,
+      text: 'Default size modal dialog',
     })(() => (
-      <Modal opened onHide={action('hide')}>
+      <Modal isOpened onHide={action('hide')}>
         <Header title="Default Modal" closeButton />
         <Content className="slds-p-around--small">
           <p>
@@ -104,10 +104,10 @@ storiesOf('Modal', module)
   .add(
     'Large',
     withInfo({
-      text: 'Large size modal dialog',
       inline: false,
+      text: 'Large size modal dialog',
     })(() => (
-      <Modal opened size="large" onHide={action('hide')}>
+      <Modal isOpened size="large" onHide={action('hide')}>
         <Header title="Large Size Modal" closeButton />
         <Content className="slds-p-around--small">
           <p>
@@ -135,10 +135,10 @@ storiesOf('Modal', module)
   .add(
     'Form elements',
     withInfo({
-      text: 'Modal with form elements in the content',
       inline: false,
+      text: 'Modal with form elements in the content',
     })(() => (
-      <Modal opened onHide={action('hide')}>
+      <Modal isOpened onHide={action('hide')}>
         <Header title="Modal Form" closeButton />
         <Content className="slds-p-around--small">
           <Form type="compound">

@@ -37,7 +37,8 @@
     "no-return-assign": "off",
     "no-mixed-operators": "off",
     "no-trailing-spaces": ["error", { "ignoreComments": true }],
-    "lines-between-class-members": ["error", "always"]
+    "lines-between-class-members": ["error", "always"],
+    "sort-keys": ["error"]
   },
   "settings": {
     "import/resolver": {
