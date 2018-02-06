@@ -1,7 +1,7 @@
 import './BadgeStories';
 import './BreadCrumbsStories';
 import './ButtonStories';
-import './DropdownButtonStories';
+import './DropdownStories';
 import './ButtonGroupStories';
 import './DatepickerStories';
 import './InputStories';
