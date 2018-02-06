@@ -1,0 +1,20 @@
+.Popover {
+  position: relative;
+  display: inline-block;
+}
+
+.Popover__portal {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  .Popover__content {
+    position: absolute;
+    top: 20px;
+    z-index: 9999;
+    
+  }
+  .Popover__hide {
+    visibility: hidden;
+  }
+}
