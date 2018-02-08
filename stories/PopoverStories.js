@@ -14,7 +14,7 @@ ea corrupti odit minima?
 `;
 
 const PopoverContent = () => (
-  <div style={{ padding: '15px', fontSize: '18px' }}>I'm an element content.</div>
+  <div style={{ padding: '15px', fontSize: '18px' }}>I&apos;m an element content.</div>
 );
 
 const TextCenteredBox = ({ children }) => (
@@ -49,7 +49,6 @@ storiesOf('Popover', module)
         info: 'info',
         success: 'success',
         warning: 'warning',
-
       });
       const isTooltip = boolean('isTooltip', false);
       const method = select('method', {
@@ -106,7 +105,9 @@ storiesOf('Popover', module)
   )
   .add(
     'Tooltip',
-    withInfo('A little style difference. Popover has fixed width of 20rem, tooltip has dynamic width, but max-width is also 20rem.')(() => (
+    withInfo(
+      'A little style difference. Popover has fixed width of 20rem, tooltip has dynamic width, but max-width is also 20rem.',
+    )(() => (
       <TextCenteredBox>
         <Popover method="hover" position="left" content="Popover content">
           <Button>Popover trigger</Button>
