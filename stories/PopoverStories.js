@@ -1,136 +1,149 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { select, boolean } from '@storybook/addon-knobs';
-import { Popover } from './../lib';
+import { Popover, Button } from './../lib';
 
 const popoverText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 Commodi laudantium molestias reprehenderit nostrum quod natus saepe
 ea corrupti odit minima?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Commodi laudantium molestias reprehenderit nostrum quod natus saepe
+ea corrupti odit minima?
 `;
 
+const PopoverContent = () => (
+  <div style={{ padding: '15px', fontSize: '18px' }}>I&apos;m a React element body.</div>
+);
+
+const TextCenteredBox = ({ children }) => (
+  <div style={{ textAlign: 'center', width: '100%' }}>{children}</div>
+);
+
+TextCenteredBox.propTypes = {
+  children: propTypes.node,
+};
+
 storiesOf('Popover', module)
-  .add('Controlled with knobs', withInfo('Popover controlled with knobs')(() => {
-    const positionOptions = {
-      '': '(none)',
-      left: 'left',
-      right: 'right',
-      top: 'top',
-      bottom: 'bottom',
-      'top-left': 'top-left',
-      'top-right': 'top-right',
-      'left-top': 'left-top',
-      'left-bottom': 'left-bottom',
-      'right-top': 'right-top',
-      'right-bottom': 'right-bottom',
-      'bottom-left': 'bottom-left',
-      'bottom-right': 'bottom-right',
-    };
-    const position = select('position', positionOptions);
-    const themeOptions = {
-      '': '(none)',
-      info: 'info',
-      success: 'success',
-      warning: 'warning',
-      error: 'error',
-    };
-    const theme = select('theme', themeOptions);
-    const hidden = boolean('hidden', false);
-    const tooltip = boolean('tooltip');
-    return (
-      <Popover position={ position } theme={ theme } hidden={ hidden } tooltip={ tooltip }>
-        <p>{ popoverText }</p>
-      </Popover>
-    );
-  }))
-  .add('Default', withInfo('Default Popover')(() => (
-    <Popover hidden={ false } position='left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Theme - Info', withInfo('Popover with info theme')(() => (
-    <Popover hidden={ false } theme='info' position='left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Theme - Error', withInfo('Popover with error theme')(() => (
-    <Popover hidden={ false } theme='error' position='left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Theme - Warning', withInfo('Popover with warning theme')(() => (
-    <Popover hidden={ false } theme='warning' position='left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Theme - Success', withInfo('Popover with success theme')(() => (
-    <Popover hidden={ false } theme='success' position='left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Left', withInfo('Popover with nubbin in left position')(() => (
-    <Popover hidden={ false } position='left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Left (top)', withInfo('Popover with nubbin in left-top position')(() => (
-    <Popover hidden={ false } position='left-top'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Left (bottom)', withInfo('Popover with nubbin in left-bottom position')(() => (
-    <Popover hidden={ false } position='left-bottom'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Top', withInfo('Popover with nubbin in top position')(() => (
-    <Popover hidden={ false } position='top'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Top (left)', withInfo('Popover with nubbin in top-left position')(() => (
-    <Popover hidden={ false } position='top-left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Top (right)', withInfo('Popover with nubbin in top-right position')(() => (
-    <Popover hidden={ false } position='top-right'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Right', withInfo('Popover with nubbin in right position')(() => (
-    <Popover hidden={ false } position='right'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Right (top)', withInfo('Popover with nubbin in right-top position')(() => (
-    <Popover hidden={ false } position='right-top'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Right (bottom)', withInfo('Popover with nubbin in right-bottom position')(() => (
-    <Popover hidden={ false } position='right-bottom'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Bottom', withInfo('Popover with nubbin in bottom position')(() => (
-    <Popover hidden={ false } position='bottom'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Bottom (left)', withInfo('Popover with nubbin in bottom-left position')(() => (
-    <Popover hidden={ false } position='bottom-left'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Position - Bottom (right)', withInfo('Popover with nubbin in bottom-right position')(() => (
-    <Popover hidden={ false } position='bottom-right'>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-  .add('Tooltip', withInfo('Popover with tooltip styling')(() => (
-    <Popover hidden={ false } position='bottom-left' tooltip>
-      <p>{ popoverText }</p>
-    </Popover>
-  )))
-;
+  .add(
+    'Controlled with knobs',
+    withInfo('Popover controlled with knobs')(() => {
+      const position = select('position', {
+        bottom: 'bottom',
+        'bottom-left': 'bottom-left',
+        'bottom-right': 'bottom-right',
+        left: 'left',
+        'left-bottom': 'left-bottom',
+        'left-top': 'left-top',
+        right: 'right',
+        'right-bottom': 'right-bottom',
+        'right-top': 'right-top',
+        top: 'top',
+        'top-left': 'top-left',
+        'top-right': 'top-right',
+      });
+      const theme = select('theme', {
+        '': '(none)',
+        error: 'error',
+        info: 'info',
+        success: 'success',
+        warning: 'warning',
+      });
+      const isTooltip = boolean('isTooltip', false);
+      const method = select('method', {
+        '': '(none)',
+        click: 'click',
+        hover: 'hover',
+      });
+      return (
+        <TextCenteredBox>
+          <Popover
+            position={position}
+            method={method}
+            isTooltip={isTooltip}
+            theme={theme}
+            body={popoverText}
+          >
+            <Button>Trigger</Button>
+          </Popover>
+        </TextCenteredBox>
+      );
+    }),
+  )
+  .add(
+    'Trigger methods',
+    withInfo('Popover can be triggered by clicking or hovering')(() => (
+      <TextCenteredBox>
+        <Popover method="click" position="left" body="I'm body.">
+          <Button>Click to trigger</Button>
+        </Popover>
+        <br />
+        <br />
+        <br />
+        <Popover method="hover" position="left" body="I'm body.">
+          <Button>Hover to trigger</Button>
+        </Popover>
+      </TextCenteredBox>
+    )),
+  )
+  .add(
+    'Header & Body',
+    withInfo('Popover accepts either string or React element as its body')(() => (
+      <TextCenteredBox>
+        <Popover method="hover" position="left" body="I'm a string body.">
+          <Button>Trigger string body</Button>
+        </Popover>
+        <br />
+        <br />
+        <br />
+        <Popover method="hover" position="left" header="I'm a header." body={<PopoverContent />}>
+          <Button>Trigger element body</Button>
+        </Popover>
+      </TextCenteredBox>
+    )),
+  )
+  .add(
+    'Tooltip',
+    withInfo(
+      'A little style difference. Popover has fixed width of 20rem, tooltip has dynamic width, but max-width is also 20rem. Do not use isTooltip when you use header',
+    )(() => (
+      <TextCenteredBox>
+        <Popover method="hover" position="left" body="Popover body">
+          <Button>Popover trigger</Button>
+        </Popover>
+        <br />
+        <br />
+        <br />
+        <Popover isTooltip method="hover" position="left" body="Tooltip body">
+          <Button>Tooltip Trigger</Button>
+        </Popover>
+      </TextCenteredBox>
+    )),
+  )
+  .add(
+    'Themes',
+    withInfo('Use different themes which have different background colors and font colors.')(() => (
+      <TextCenteredBox>
+        <Popover method="hover" body="I'm a demo body">
+          <Button>none (default)</Button>
+        </Popover>
+        &nbsp;
+        <Popover theme="info" method="hover" body="I'm a demo body">
+          <Button>info</Button>
+        </Popover>
+        &nbsp;
+        <Popover theme="success" method="hover" body="I'm a demo body">
+          <Button>success</Button>
+        </Popover>
+        &nbsp;
+        <Popover theme="warning" method="hover" body="I'm a demo body">
+          <Button>warning</Button>
+        </Popover>
+        &nbsp;
+        <Popover theme="error" method="hover" body="I'm a demo body">
+          <Button>error</Button>
+        </Popover>
+      </TextCenteredBox>
+    )),
+  );
