@@ -12,6 +12,7 @@ import './CheckboxStories';
 import './SelectStories';
 import './PicklistStories';
 import './DateInputStories';
+import './LabelStories';
 import './LookupStories';
 import './FormStories';
 import './GridStories';
