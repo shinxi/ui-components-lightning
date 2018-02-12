@@ -2,6 +2,7 @@ import './BadgeStories';
 import './BreadCrumbsStories';
 import './ButtonStories';
 import './DropdownStories';
+import './ContainerStories';
 import './ButtonGroupStories';
 import './DatepickerStories';
 import './InputStories';

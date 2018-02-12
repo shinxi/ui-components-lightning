@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, select } from '@storybook/addon-knobs';
-import { Icon } from './../lib';
+import { Icon, IconContainer } from './../lib';
 
 const iconListItemStyle = {
   float: 'left', width: '10rem', height: '5rem', padding: '1.5rem', textAlign: 'center',
@@ -31,41 +31,42 @@ storiesOf('Icon', module)
     const icon = text('icon', 'account');
     const textColor = text('textColor');
     const fillColor = text('fillColor');
-    const containerOptions = {
+    const containerShapes = {
       '': '(none)',
       default: 'default',
       circle: 'circle',
     };
-    const container = select('container', containerOptions);
+    const shape = select('container', containerShapes);
     return (
-      <Icon
-        category={ category }
-        size={ size }
-        icon={ icon }
-        textColor={ textColor }
-        fillColor={ fillColor }
-        container={ container }
-      />
+      <IconContainer shape={shape}>
+        <Icon
+          category={category}
+          size={size}
+          icon={icon}
+          textColor={textColor}
+          fillColor={fillColor}
+        />
+      </IconContainer>
     );
   }))
   .add('Sizes', withInfo('Icon with different size (x-small, small, medium, large)')(() => (
     <div>
-      <Icon icon='standard:case' size='x-small' onClick={ action('x-small:click') } />
-      <span className='slds-p-right--small' />
-      <Icon icon='standard:case' size='small' onClick={ action('small:click') } />
-      <span className='slds-p-right--small' />
-      <Icon icon='standard:case' size='medium' onClick={ action('medium:click') } />
-      <span className='slds-p-right--small' />
-      <Icon icon='standard:case' size='large' onClick={ action('large:click') } />
+      <Icon icon="standard:case" size="x-small" onClick={action('x-small:click')} />
+      <span className="slds-p-right--small" />
+      <Icon icon="standard:case" size="small" onClick={action('small:click')} />
+      <span className="slds-p-right--small" />
+      <Icon icon="standard:case" size="medium" onClick={action('medium:click')} />
+      <span className="slds-p-right--small" />
+      <Icon icon="standard:case" size="large" onClick={action('large:click')} />
     </div>
   )))
   .add('Standard Icons', withInfo('Icons in standard category')(() => (
-    <ul className='slds-clearfix'>
+    <ul className="slds-clearfix">
       {
-        Icon.ICONS.STANDARD_ICONS.map((icon, i) => (
-          <li key={ i } className='slds-p-around--small' style={ iconListItemStyle }>
+        Icon.icons.standard.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
-              <Icon category='standard' icon={ icon } onClick={ action(`${icon}:click`) } />
+              <Icon category="standard" icon={icon} onClick={action(`${icon}:click`)} />
               <figcaption>{ icon }</figcaption>
             </figure>
           </li>
@@ -74,12 +75,12 @@ storiesOf('Icon', module)
     </ul>
   )))
   .add('Custom Icons', withInfo('Icons in custom category')(() => (
-    <ul className='slds-clearfix'>
+    <ul className="slds-clearfix">
       {
-        Icon.ICONS.CUSTOM_ICONS.map((icon, i) => (
-          <li key={ i } className='slds-p-around--small' style={ iconListItemStyle }>
+        Icon.icons.custom.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
-              <Icon category='custom' icon={ icon } onClick={ action(`${icon}:click`) } />
+              <Icon category="custom" icon={icon} onClick={action(`${icon}:click`)} />
               <figcaption>{ icon }</figcaption>
             </figure>
           </li>
@@ -88,12 +89,12 @@ storiesOf('Icon', module)
     </ul>
   )))
   .add('Action Icons', withInfo('Icons in action category')(() => (
-    <ul className='slds-clearfix'>
+    <ul className="slds-clearfix">
       {
-        Icon.ICONS.ACTION_ICONS.map((icon, i) => (
-          <li key={ i } className='slds-p-around--small' style={ iconListItemStyle }>
+        Icon.icons.action.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
-              <Icon category='action' icon={ icon } container='circle' size='small' onClick={ action(`${icon}:click`) } />
+              <Icon category="action" icon={icon} container="circle" size="small" onClick={action(`${icon}:click`)} />
               <figcaption>{ icon }</figcaption>
             </figure>
           </li>
@@ -101,13 +102,29 @@ storiesOf('Icon', module)
       }
     </ul>
   )))
-  .add('Doctype Icons', withInfo('Icons in doctype category')(() => (
-    <ul className='slds-clearfix'>
+  .add('Action Icons with Icon Containers', withInfo('Icons in action category with container')(() => (
+    <ul className="slds-clearfix">
       {
-        Icon.ICONS.DOCTYPE_ICONS.map((icon, i) => (
-          <li key={ i } className='slds-p-around--small' style={ iconListItemStyle }>
+        Icon.icons.action.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
-              <Icon category='doctype' icon={ icon } onClick={ action(`${icon}:click`) } />
+              <IconContainer shape="circle">
+                <Icon category="action" icon={icon} size="small" onClick={action(`${icon}:click`)} />
+              </IconContainer>
+              <figcaption>{icon}</figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  )))
+  .add('Doctype Icons', withInfo('Icons in doctype category')(() => (
+    <ul className="slds-clearfix">
+      {
+        Icon.icons.doctype.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
+            <figure>
+              <Icon category="doctype" icon={icon} onClick={action(`${icon}:click`)} />
               <figcaption>{ icon }</figcaption>
             </figure>
           </li>
@@ -116,12 +133,12 @@ storiesOf('Icon', module)
     </ul>
   )))
   .add('Utility Icons', withInfo('Icons in utility category')(() => (
-    <ul className='slds-clearfix'>
+    <ul className="slds-clearfix">
       {
-        Icon.ICONS.UTILITY_ICONS.map((icon, i) => (
-          <li key={ i } className='slds-p-around--small' style={ iconListItemStyle }>
+        Icon.icons.utility.map((icon, i) => (
+          <li key={i} className="slds-p-around--small" style={iconListItemStyle}>
             <figure>
-              <Icon category='utility' icon={ icon } onClick={ action(`${icon}:click`) } />
+              <Icon category="utility" icon={icon} onClick={action(`${icon}:click`)} />
               <figcaption>{ icon }</figcaption>
             </figure>
           </li>
