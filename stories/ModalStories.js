@@ -3,26 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import {
-  Modal,
-  Button,
-  Form,
-  FieldSet,
-  Input,
-  DateInput,
-  Lookup,
-  Picklist,
-  PicklistItem,
-} from './../lib';
+import { Modal, Button, Form, FieldSet, Input } from './../lib';
 
 const { Header, Content, Footer } = Modal;
 const { Row } = FieldSet;
-
-const LOOKUP_DATA = [
-  { icon: 'standard:account', label: 'Account', value: '1' },
-  { icon: 'standard:contact', label: 'Contact', value: '2' },
-  { icon: 'standard:opportunity', label: 'Opportunity', value: '3' },
-];
 
 storiesOf('Modal', module)
   .add(
@@ -148,24 +132,6 @@ storiesOf('Modal', module)
                 <Input label="Last Name" placeholder="Last Name" />
               </Row>
             </FieldSet>
-            <FieldSet label="Date Range">
-              <Row>
-                <DateInput label="Start" />
-                <DateInput label="End" />
-              </Row>
-            </FieldSet>
-            <Row>
-              <DateInput label="Closing Date" />
-            </Row>
-            <Row>
-              <Picklist label="Picklist #1" menuSize="medium">
-                {new Array(10)
-                  .join('_')
-                  .split('')
-                  .map((a, i) => <PicklistItem value={i + 1} label={`Item #${i + 1}`} key={i} />)}
-              </Picklist>
-              <Lookup label="Lookup" data={LOOKUP_DATA} />
-            </Row>
           </Form>
         </Content>
         <Footer>
