@@ -24,6 +24,7 @@ import './SelectStories';
 import './SpinnerStories';
 import './TabsStories';
 import './TableStories';
+import './TextStories';
 import './TextareaStories';
 import './ToggleStories';
 import './TreeStories';
