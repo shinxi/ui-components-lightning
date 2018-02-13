@@ -7,3 +7,5 @@ coverage
 report
 dist
 storybook-static
+.vscode/
+.vscode/*
