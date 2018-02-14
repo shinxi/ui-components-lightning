@@ -9,50 +9,56 @@ import {
   Textarea,
   Checkbox,
   CheckboxGroup,
+  Label,
   Radio,
   RadioGroup,
   Select,
   Option,
-  Picklist,
-  PicklistItem,
-  DateInput,
-  Lookup,
   Button,
+  FormElement,
+  Toggle,
 } from './../lib';
 
 const { Row } = FieldSet;
-
-const LOOKUP_DATA = [
-  { icon: 'standard:account', label: 'Account', value: '1' },
-  { icon: 'standard:contact', label: 'Contact', value: '2' },
-  { icon: 'standard:opportunity', label: 'Opportunity', value: '3' },
-];
 
 storiesOf('Form', module)
   .add(
     'Horizontal Form',
     withInfo('Horizontal Form')(() => (
       <Form type="horizontal" onSubmit={action('submit')}>
-        <Input label="Text Input" />
-        <Textarea label="Textarea Input" />
-        <CheckboxGroup label="Checkbox Group Label">
-          <Checkbox label="All opportunities owned by you" />
-          <Checkbox label="All contacts in the account owned by you" />
-        </CheckboxGroup>
-        <RadioGroup label="Radio Group Label" name="radiogroup1">
-          <Radio label="Lead Generation" />
-          <Radio label="Education Leads" />
-        </RadioGroup>
-        <Select label="Select Label">
-          <Option value="1">Option One</Option>
-          <Option value="2">Option Two</Option>
-        </Select>
-        <Picklist label="Picklist Label">
-          <PicklistItem value="1">Picklist Item One</PicklistItem>
-          <PicklistItem value="2">Picklist Item Two</PicklistItem>
-        </Picklist>
-        <DateInput label="Date Input Label" />
-        <Lookup label="Lookup Label" data={LOOKUP_DATA} />
+        <FormElement>
+          <Label>Text Input Label</Label>
+          <Input />
+        </FormElement>
+        <FormElement>
+          <Label>Text Area Label</Label>
+          <Textarea rows="3" />
+        </FormElement>
+        <FormElement>
+          <Label>Toggle Label</Label>
+          <Toggle />
+        </FormElement>
+        <FormElement>
+          <Label>Checkbox Group Label</Label>
+          <CheckboxGroup>
+            <Checkbox label="All opportunities owned by you" />
+            <Checkbox label="All contacts in the account owned by you" />
+          </CheckboxGroup>
+        </FormElement>
+        <FormElement>
+          <Label>Radio Group Label</Label>
+          <RadioGroup name="radiogroup1">
+            <Radio label="Lead Generation" />
+            <Radio label="Education Leads" />
+          </RadioGroup>
+        </FormElement>
+        <FormElement>
+          <Label>Select Label</Label>
+          <Select>
+            <Option value="1">Option One</Option>
+            <Option value="2">Option Two</Option>
+          </Select>
+        </FormElement>
       </Form>
     )),
   )
@@ -60,26 +66,35 @@ storiesOf('Form', module)
     'Stacked Form',
     withInfo('Stacked Form')(() => (
       <Form type="stacked" onSubmit={action('submit')}>
-        <Input label="Text Input" />
-        <Textarea label="Textarea Input" />
-        <CheckboxGroup label="Checkbox Group Label">
-          <Checkbox label="All opportunities owned by you" />
-          <Checkbox label="All contacts in the account owned by you" />
-        </CheckboxGroup>
-        <RadioGroup label="Radio Group Label" name="radiogroup1">
-          <Radio label="Lead Generation" />
-          <Radio label="Education Leads" />
-        </RadioGroup>
-        <Select label="Select Label">
-          <Option value="1">Option One</Option>
-          <Option value="2">Option Two</Option>
-        </Select>
-        <Picklist label="Picklist Label">
-          <PicklistItem value="1">Picklist Item One</PicklistItem>
-          <PicklistItem value="2">Picklist Item Two</PicklistItem>
-        </Picklist>
-        <DateInput label="Date Input Label" />
-        <Lookup label="Lookup Label" data={LOOKUP_DATA} />
+        <FormElement>
+          <Label>Text Input Label</Label>
+          <Input />
+        </FormElement>
+        <FormElement>
+          <Label>Text Area Label</Label>
+          <Textarea />
+        </FormElement>
+        <FormElement>
+          <Label>Checkbox Group Label</Label>
+          <CheckboxGroup>
+            <Checkbox label="All opportunities owned by you" />
+            <Checkbox label="All contacts in the account owned by you" />
+          </CheckboxGroup>
+        </FormElement>
+        <FormElement>
+          <Label>Radio Group Label</Label>
+          <RadioGroup name="radiogroup1">
+            <Radio label="Lead Generation" />
+            <Radio label="Education Leads" />
+          </RadioGroup>
+        </FormElement>
+        <FormElement>
+          <Label>Select Label</Label>
+          <Select>
+            <Option value="1">Option One</Option>
+            <Option value="2">Option Two</Option>
+          </Select>
+        </FormElement>
       </Form>
     )),
   )
@@ -87,72 +102,90 @@ storiesOf('Form', module)
     'Inline Form',
     withInfo('Inline Form')(() => (
       <Form type="inline" onSubmit={action('submit')}>
-        <Input label="Name" />
-        <Input label="Email" />
+        <FormElement>
+          <Label>Username</Label>
+          <Input />
+        </FormElement>
+        <FormElement>
+          <Label>Password</Label>
+          <Input type="password" />
+        </FormElement>
         <Button type="brand">Submit</Button>
       </Form>
     )),
   )
   .add(
     'Compound Form',
-    withInfo('Stacked Form')(() => (
+    withInfo('Compound Form')(() => (
       <Form type="compound" onSubmit={action('submit')}>
         <FieldSet label="Name">
-          <Row>
-            <Input label="First Name" type="text" placeholder="Input first name here" />
-            <Input label="Last Name" type="text" placeholder="Input last name here" />
+          <Row cols={8}>
+            <FormElement cols={2}>
+              <Label>First Name</Label>
+              <Input type="text" placeholder="Input first name here" />
+            </FormElement>
+            <FormElement cols={2}>
+              <Label>Last Name</Label>
+              <Input type="text" placeholder="Input last name here" />
+            </FormElement>
           </Row>
         </FieldSet>
         <FieldSet label="Address">
           <Row>
-            <Textarea label="Street" rows="2" placeholder="Input street here" />
+            <FormElement>
+              <Label>Street</Label>
+              <Textarea rows="2" placeholder="Input street here" />
+            </FormElement>
+          </Row>
+          <Row cols={6}>
+            <FormElement cols={1}>
+              <Label>City</Label>
+              <Input placeholder="Input city here" />
+            </FormElement>
           </Row>
           <Row>
-            <Input label="City" size="40" placeholder="Input city here" />
-          </Row>
-          <Row>
-            <Select label="State" defaultValue={1}>
-              <Option value="CA">California</Option>
-              <Option value="OR">Oregon</Option>
-              <Option value="WA">Washington</Option>
-            </Select>
-            <Input label="Postal Code" type="number" placeholder="00000" />
-            <Select label="Country" defaultValue={1}>
-              <Option value="us">United States</Option>
-              <Option value="ca">Canada</Option>
-              <Option value="other" disabled>
-                Others
-              </Option>
-            </Select>
-          </Row>
-          <Row>
-            <Picklist label="Lead Source" menuSize="large">
-              <PicklistItem value={1} label="Web" />
-              <PicklistItem value={2}>E-mail</PicklistItem>
-              <PicklistItem value={3} disabled>
-                Webinar
-              </PicklistItem>
-              <PicklistItem value={4}>Phone</PicklistItem>
-              <PicklistItem value={5}>Event</PicklistItem>
-            </Picklist>
-            <DateInput label="Contact Date" placeholder="YYYY/MM/DD" dateFormat="YYYY/MM/DD" />
-          </Row>
-          <Row cols={4}>
-            <Lookup label="Related Type" data={LOOKUP_DATA} cols={3} />
+            <FormElement>
+              <Label>State</Label>
+              <Select defaultValue={1}>
+                <Option value="CA">California</Option>
+                <Option value="OR">Oregon</Option>
+                <Option value="WA">Washington</Option>
+              </Select>
+            </FormElement>
+            <FormElement>
+              <Label>Zip Code</Label>
+              <Input type="number" placeholder="00000" />
+            </FormElement>
+            <FormElement>
+              <Label>Country</Label>
+              <Select defaultValue={1}>
+                <Option value="us">United States</Option>
+                <Option value="ca">Canada</Option>
+                <Option value="other" disabled>
+                  Others
+                </Option>
+              </Select>
+            </FormElement>
           </Row>
         </FieldSet>
         <FieldSet label="Other">
           <Row>
-            <RadioGroup label="Gender" name="gender">
-              <Radio label="Male" value={1} />
-              <Radio label="Female" value={2} />
-              <Radio label="Other" value={3} />
-            </RadioGroup>
-            <CheckboxGroup label="Lead Source" name="leadSource">
-              <Checkbox label="Web" value={1} />
-              <Checkbox label="Email" value={2} />
-              <Checkbox label="Phone" value={3} />
-            </CheckboxGroup>
+            <FormElement>
+              <Label>Gender</Label>
+              <RadioGroup name="gender">
+                <Radio label="Male" value={1} />
+                <Radio label="Female" value={2} />
+                <Radio label="Other" value={3} />
+              </RadioGroup>
+            </FormElement>
+            <FormElement>
+              <Label>Lead Source</Label>
+              <CheckboxGroup name="leadSource">
+                <Checkbox label="Web" value="1" />
+                <Checkbox label="Email" value="2" />
+                <Checkbox label="Phone" value="3" />
+              </CheckboxGroup>
+            </FormElement>
           </Row>
         </FieldSet>
       </Form>
