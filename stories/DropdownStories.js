@@ -2,11 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { text, boolean, select } from '@storybook/addon-knobs';
-import { Dropdown, DropdownItem, Button, Icon } from './../lib';
-
-const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
-const lightBgStyle = { backgroundColor: '#cccccc', padding: 4 };
+import { Dropdown, Menu, MenuItem, MenuHeader, Button, Icon } from './../lib';
 
 const stories = storiesOf('Dropdown', module)
   .add('Left/Right icon', withInfo('Dropdown button with icon in left/right side of menu items')(() => (
@@ -16,16 +12,18 @@ const stories = storiesOf('Dropdown', module)
       <Button type="icon-border" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
         <Icon icon="down" align="right" />
       </Button>
-      <DropdownItem icon="check" iconRight="table">
-        Menu Item One
-        <Icon icon="check" align="left" />
-        <Icon icon="table" align="right" />
-      </DropdownItem>
-      <DropdownItem icon="none" iconRight="kanban">
-        Menu Item Two
-        <Icon icon="none" align="left" />
-        <Icon icon="kanban" align="right" />
-      </DropdownItem>
+      <Menu>
+        <MenuItem icon="check" iconRight="table">
+          Menu Item One
+          <Icon icon="check" align="left" />
+          <Icon icon="table" align="right" />
+        </MenuItem>
+        <MenuItem icon="none" iconRight="kanban">
+          Menu Item Two
+          <Icon icon="none" align="left" />
+          <Icon icon="kanban" align="right" />
+        </MenuItem>
+      </Menu>
     </Dropdown>
   )))
   .add('Right aligned menu', withInfo('Dropdown')(() => (
@@ -36,10 +34,12 @@ const stories = storiesOf('Dropdown', module)
         <Button type="icon-border" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
           <Icon icon="down" align="right" />
         </Button>
-        <DropdownItem>Menu Item One</DropdownItem>
-        <DropdownItem disabled>Menu Item Two</DropdownItem>
-        <DropdownItem>Menu Item Three</DropdownItem>
-        <DropdownItem>Menu Item Four</DropdownItem>
+        <Menu>
+          <MenuItem>Menu Item One</MenuItem>
+          <MenuItem disabled>Menu Item Two</MenuItem>
+          <MenuItem>Menu Item Three</MenuItem>
+          <MenuItem>Menu Item Four</MenuItem>
+        </Menu>
       </Dropdown>
     </div>
   )))
@@ -49,10 +49,12 @@ const stories = storiesOf('Dropdown', module)
         Dropdown Button
         <Icon icon="settings" align="right" />
       </Button>
-      <DropdownItem>Menu Item One</DropdownItem>
-      <DropdownItem disabled>Menu Item Two</DropdownItem>
-      <DropdownItem>Menu Item Three</DropdownItem>
-      <DropdownItem>Menu Item Four</DropdownItem>
+      <Menu>
+        <MenuItem>Menu Item One</MenuItem>
+        <MenuItem disabled>Menu Item Two</MenuItem>
+        <MenuItem>Menu Item Three</MenuItem>
+        <MenuItem>Menu Item Four</MenuItem>
+      </Menu>
     </Dropdown>
   )))
   .add('Nubbin in top', withInfo('Nubbin in top of the menu dropdown')(() => (
@@ -61,10 +63,13 @@ const stories = storiesOf('Dropdown', module)
         <Button type="icon-container" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
           <Icon icon="settings" align="right" />
         </Button>
-        <DropdownItem>Menu Item One</DropdownItem>
-        <DropdownItem disabled>Menu Item Two</DropdownItem>
-        <DropdownItem>Menu Item Three</DropdownItem>
-        <DropdownItem divider="top">Menu Item Four</DropdownItem>
+        <Menu>
+          <MenuHeader> List </MenuHeader>
+          <MenuItem>Menu Item One</MenuItem>
+          <MenuItem disabled>Menu Item Two</MenuItem>
+          <MenuItem>Menu Item Three</MenuItem>
+          <MenuItem divider="top">Menu Item Four</MenuItem>
+        </Menu>
       </Dropdown>
     </div>
   )))
@@ -92,12 +97,14 @@ const stories = storiesOf('Dropdown', module)
           DropDown Custom
           <Icon icon="down" align="right" />
         </Button>
-        <DropdownItem>
-          Drop down Item 1
-          <Icon icon="setting" />
-        </DropdownItem>
-        <DropdownItem> Drop down Item 2 </DropdownItem>
-        <DropdownItem> Drop down Item 3 </DropdownItem>
+        <Menu>
+          <MenuItem>
+            Drop down Item 1
+            <Button><Icon icon="setting" /></Button>
+          </MenuItem>
+          <MenuItem> Drop down Item 2 </MenuItem>
+          <MenuItem> Drop down Item 3 </MenuItem>
+        </Menu>
       </Dropdown>
 
     </div>
