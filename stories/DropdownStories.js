@@ -6,10 +6,8 @@ import { Dropdown, Menu, MenuItem, MenuHeader, Button, Icon } from './../lib';
 
 const stories = storiesOf('Dropdown', module)
   .add('Left/Right icon', withInfo('Dropdown button with icon in left/right side of menu items')(() => (
-    <Dropdown
-      onMenuItemClick={action('menuItemClick')}
-    >
-      <Button type="icon-border" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
+    <Dropdown>
+      <Button type="icon-border" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
         <Icon icon="down" align="right" />
       </Button>
       <Menu>
@@ -31,7 +29,7 @@ const stories = storiesOf('Dropdown', module)
       <Dropdown
         menuAlign="right"
       >
-        <Button type="icon-border" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
+        <Button type="icon-border" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
           <Icon icon="down" align="right" />
         </Button>
         <Menu>
@@ -45,7 +43,7 @@ const stories = storiesOf('Dropdown', module)
   )))
   .add('Hover Popup', withInfo('Dropdown is rendered in hover event')(() => (
     <Dropdown>
-      <Button type="neutral" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
+      <Button type="neutral" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
         Dropdown Button
         <Icon icon="settings" align="right" />
       </Button>
@@ -60,7 +58,7 @@ const stories = storiesOf('Dropdown', module)
   .add('Nubbin in top', withInfo('Nubbin in top of the menu dropdown')(() => (
     <div style={{ paddingLeft: 100 }}>
       <Dropdown>
-        <Button type="icon-container" handleDropdownClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
+        <Button type="icon-container" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
           <Icon icon="settings" align="right" />
         </Button>
         <Menu>
@@ -83,7 +81,7 @@ const stories = storiesOf('Dropdown', module)
           { id: '2', name: 'Drop down item 2' },
           { id: '3', name: 'Drop down item 3' },
         ]}
-        handleDropdownClick={action('dropdownClick')}
+        onClick={action('dropdownClick')}
       />
     </div>
   )))
@@ -91,7 +89,7 @@ const stories = storiesOf('Dropdown', module)
     <div style={{ paddingLeft: 100 }}>
       <Dropdown
         display="Dropdown Button Custom"
-        handleDropdownClick={action('dropdownClick')}
+        onClick={action('dropdownClick')}
       >
         <Button type="neutral" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
           DropDown Custom
