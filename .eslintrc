@@ -40,7 +40,6 @@
     "no-trailing-spaces": ["error", { "ignoreComments": true }],
     "lines-between-class-members": ["error", "always"],
     "sort-keys": ["error"],
-    "comma-dangle": ["error", "never"]
   },
   "settings": {
     "import/resolver": {
