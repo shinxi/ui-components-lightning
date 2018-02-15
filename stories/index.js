@@ -28,3 +28,4 @@ import './NotificationStories';
 import './PopoverStories';
 import './SpinnerStories';
 import './TextStories';
+import './TooltipStories';
