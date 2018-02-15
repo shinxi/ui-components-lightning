@@ -3,19 +3,19 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import {
-  Form,
-  FieldSet,
-  Input,
-  Textarea,
+  Button,
   Checkbox,
   CheckboxGroup,
+  FieldSet,
+  Form,
+  FormElement,
+  Input,
   Label,
+  Option,
   Radio,
   RadioGroup,
   Select,
-  Option,
-  Button,
-  FormElement,
+  Textarea,
   Toggle,
 } from './../lib';
 
