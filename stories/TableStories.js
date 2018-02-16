@@ -36,21 +36,21 @@ storiesOf('Table', module)
   .add(
     'Controlled with knobs',
     withInfo('Table controlled with knobs')(() => {
-      const bordered = boolean('bordered');
-      const sortable = boolean('sortable');
-      const striped = boolean('striped');
-      const noRowHover = boolean('noRowHover');
-      const verticalBorders = boolean('verticalBorders');
-      const fixedLayout = boolean('fixedLayout');
+      const hasRowBorder = boolean('hasRowBorder');
+      const isSortable = boolean('isSortable');
+      const isStriped = boolean('isStriped');
+      const hasRowHover = boolean('hasRowHover');
+      const hasColumnBorder = boolean('hasColumnBorder');
+      const hasFixedLayout = boolean('hasFixedLayout');
       const hasActions = boolean('hasActions', true);
       return (
         <Table
-          bordered={bordered}
-          sortable={sortable}
-          striped={striped}
-          noRowHover={noRowHover}
-          verticalBorders={verticalBorders}
-          fixedLayout={fixedLayout}
+          hasRowBorder={hasRowBorder}
+          isSortable={isSortable}
+          isStriped={isStriped}
+          hasRowHover={hasRowHover}
+          hasColumnBorder={hasColumnBorder}
+          hasFixedLayout={hasFixedLayout}
         >
           <TableHeader hasActions={hasActions}>
             <TableRow>
@@ -84,7 +84,7 @@ storiesOf('Table', module)
   .add(
     'Default',
     withInfo('Default Table component')(() => (
-      <Table bordered>
+      <Table hasRowBorder>
         <TableHeader>
           <TableRow>
             {headerNames.map(name => (
@@ -107,7 +107,7 @@ storiesOf('Table', module)
   .add(
     'AutoWidth',
     withInfo('Default Table component with autoWidth')(() => (
-      <Table bordered autoWidth>
+      <Table hasRowBorder hasAutoWidth>
         <TableHeader>
           <TableRow>
             {headerNames.map(name => (
@@ -130,7 +130,7 @@ storiesOf('Table', module)
   .add(
     'With Striped Row',
     withInfo('Table component with striped row')(() => (
-      <Table bordered striped>
+      <Table hasRowBorder isStriped>
         <TableHeader>
           <TableRow>
             {headerNames.map(name => (
@@ -153,7 +153,7 @@ storiesOf('Table', module)
   .add(
     'With No Row Hover',
     withInfo('Table component with row hovering highlight is disabled')(() => (
-      <Table bordered noRowHover>
+      <Table hasRowBorder hasRowHover>
         <TableHeader>
           <TableRow>
             {headerNames.map(name => (
@@ -176,7 +176,7 @@ storiesOf('Table', module)
   .add(
     'With Vertical Borders',
     withInfo('Table component with vertical borders enabled')(() => (
-      <Table bordered verticalBorders>
+      <Table hasRowBorder hasColumnBorder>
         <TableHeader>
           <TableRow>
             {headerNames.map(name => (
@@ -199,7 +199,7 @@ storiesOf('Table', module)
   .add(
     'With Fixed Layout',
     withInfo('Table component with fixed layout')(() => (
-      <Table bordered fixedLayout>
+      <Table hasRowBorder hasFixedLayout>
         <TableHeader>
           <TableRow>
             {headerNames.map(name => (
@@ -224,11 +224,11 @@ storiesOf('Table', module)
     withInfo(
       'Table component with sort feature enabled ("Account Name" column is disabled)',
     )(() => (
-      <Table bordered sortable>
+      <Table hasRowBorder isSortable>
         <TableHeader>
           <TableRow>
             {headerNames.map((name, i) => (
-              <TableHeaderColumn key={name} sortable={i !== 1}>
+              <TableHeaderColumn key={name} isSortable={i !== 1}>
                 {name}
               </TableHeaderColumn>
             ))}
