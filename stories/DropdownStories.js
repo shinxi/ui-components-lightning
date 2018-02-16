@@ -8,15 +8,16 @@ const stories = storiesOf('Dropdown', module)
   .add('Left/Right icon', withInfo('Dropdown button with icon in left/right side of menu items')(() => (
     <Dropdown>
       <Button type="icon-border" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
-        <Icon icon="down" align="right" />
+        <Icon category="utility" icon="down" align="right" size="small" />
       </Button>
       <Menu>
-        <MenuItem icon="check" iconRight="table">
+        <MenuItem>
+          <Icon icon="check" align="right" />
           Menu Item One
           <Icon icon="check" align="left" />
           <Icon icon="table" align="right" />
         </MenuItem>
-        <MenuItem icon="none" iconRight="kanban">
+        <MenuItem>
           Menu Item Two
           <Icon icon="none" align="left" />
           <Icon icon="kanban" align="right" />
@@ -26,13 +27,11 @@ const stories = storiesOf('Dropdown', module)
   )))
   .add('Right aligned menu', withInfo('Dropdown')(() => (
     <div>
-      <Dropdown
-        menuAlign="right"
-      >
+      <Dropdown >
         <Button type="icon-border" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
-          <Icon icon="down" align="right" />
+          <Icon icon="down" align="right" category="utility" size="small" />
         </Button>
-        <Menu>
+        <Menu align="right">
           <MenuItem>Menu Item One</MenuItem>
           <MenuItem disabled>Menu Item Two</MenuItem>
           <MenuItem>Menu Item Three</MenuItem>
@@ -45,7 +44,7 @@ const stories = storiesOf('Dropdown', module)
     <Dropdown>
       <Button type="neutral" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
         Dropdown Button
-        <Icon icon="settings" align="right" />
+        <Icon icon="settings" align="right" category="utility" size="small" />
       </Button>
       <Menu>
         <MenuItem>Menu Item One</MenuItem>
@@ -59,9 +58,9 @@ const stories = storiesOf('Dropdown', module)
     <div style={{ paddingLeft: 100 }}>
       <Dropdown>
         <Button type="icon-container" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
-          <Icon icon="settings" align="right" />
+          <Icon icon="settings" align="right" category="utility" size="small" />
         </Button>
-        <Menu>
+        <Menu nubbin="top">
           <MenuHeader> List </MenuHeader>
           <MenuItem>Menu Item One</MenuItem>
           <MenuItem disabled>Menu Item Two</MenuItem>
@@ -93,7 +92,7 @@ const stories = storiesOf('Dropdown', module)
       >
         <Button type="neutral" onClick={action('dropdownClick')} onBlur={action('dropdownClick')}>
           DropDown Custom
-          <Icon icon="down" align="right" />
+          <Icon icon="down" align="right" category="utility" size="small" />
         </Button>
         <Menu>
           <MenuItem>

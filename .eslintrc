@@ -39,7 +39,7 @@
     "no-mixed-operators": "off",
     "no-trailing-spaces": ["error", { "ignoreComments": true }],
     "lines-between-class-members": ["error", "always"],
-    "sort-keys": ["error"],
+    "sort-keys": ["error"]
   },
   "settings": {
     "import/resolver": {
