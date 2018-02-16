@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { ButtonGroup, Button, DropdownButton, Icon, MenuItem } from './../lib';
+import { ButtonGroup, Button, Dropdown, Menu, MenuItem, Icon } from './../lib';
 
 const darkBgStyle = { backgroundColor: '#16325c', padding: 4 };
 
@@ -39,7 +39,7 @@ const stories = storiesOf('ButtonGroup', module)
         <Icon icon="download" align="right" />
         Download
       </Button>
-      <DropdownButton
+      <Dropdown
         type="icon-border"
         menuAlign="right"
         onMenuItemClick={action('menuItemClick')}
@@ -47,7 +47,7 @@ const stories = storiesOf('ButtonGroup', module)
         <MenuItem>Menu Item One</MenuItem>
         <MenuItem>Menu Item Two</MenuItem>
         <MenuItem>Menu Item Three</MenuItem>
-      </DropdownButton>
+      </Dropdown>
     </ButtonGroup>
   )))
   .add('Inverse', withInfo('Grouped buttons with inversed color')(() => (
@@ -59,15 +59,17 @@ const stories = storiesOf('ButtonGroup', module)
           <Icon icon="download" align="left" />
           Download
         </Button>
-        <DropdownButton
+        <Dropdown
           type="icon-border-inverse"
           menuAlign="right"
           onMenuItemClick={action('menuItemClick')}
         >
-          <MenuItem>Menu Item One</MenuItem>
-          <MenuItem>Menu Item Two</MenuItem>
-          <MenuItem>Menu Item Three</MenuItem>
-        </DropdownButton>
+          <Menu>
+            <MenuItem>Menu Item One</MenuItem>
+            <MenuItem>Menu Item Two</MenuItem>
+            <MenuItem>Menu Item Three</MenuItem>
+          </Menu>
+        </Dropdown>
       </ButtonGroup>
     </div>
   )))
