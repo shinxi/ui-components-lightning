@@ -14,9 +14,10 @@ const optionsArrayObj = [
 
 storiesOf('Select', module)
   .add('Controlled with knobs', withInfo('Select controlled with knobs')(() => (
-    <FormElement>
+    <FormElement >
       <Label> Select label </Label>
       <Select
+        name="Text"
         disabled={boolean('disabled')}
         onChange={action('change')}
         onBlur={action('blur')}
