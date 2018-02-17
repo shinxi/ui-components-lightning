@@ -22,6 +22,7 @@
   },
   "rules": {
     "arrow-parens": "off",
+    "class-methods-use-this": "off",
     "generator-star-spacing": "off",
     "import/no-unresolved": ["warn"],
     "import/no-extraneous-dependencies": "off",
