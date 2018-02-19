@@ -1,6 +1,6 @@
 {
   "name": "@svmx/ui-components-lightning-josh",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "lib/index.js",
   "scripts": {
