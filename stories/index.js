@@ -1,26 +1,17 @@
 import './BadgeStories';
 import './BreadCrumbsStories';
 import './ButtonStories';
-<<<<<<< HEAD
-=======
-import './DropdownStories';
-import './ContainerStories';
->>>>>>> master
 import './ButtonGroupStories';
 import './CheckboxStories';
 import './ContainerStories';
 import './DateInputStories';
-<<<<<<< HEAD
 import './DatepickerStories';
-import './DropdownButtonStories';
-=======
-import './LabelStories';
-import './LookupStories';
->>>>>>> master
+import './DropdownStories';
 import './FormStories';
 import './GridStories';
 import './IconStories';
 import './InputStories';
+import './LabelStories';
 import './LookupStories';
 import './MediaObjectStories';
 import './ModalStories';
@@ -32,17 +23,10 @@ import './PopoverStories';
 import './RadioStories';
 import './SelectStories';
 import './SpinnerStories';
-import './TabsStories';
 import './TableStories';
+import './TabsStories';
 import './TextStories';
 import './TextareaStories';
 import './ToggleStories';
-import './TreeStories';
-<<<<<<< HEAD
-=======
-import './NotificationStories';
-import './PopoverStories';
-import './SpinnerStories';
-import './TextStories';
 import './TooltipStories';
->>>>>>> master
+import './TreeStories';
