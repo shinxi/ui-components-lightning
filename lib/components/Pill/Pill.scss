@@ -1,0 +1,21 @@
+.Pill {
+  &.Pill--truncated {
+    .Pill__label {
+      max-width: 100px;
+    }
+  }
+
+  .Pill__icon {
+    margin-right: 0;
+  }
+  
+  .Pill__label {
+    margin-left: .5em;
+  }
+  
+  .Pill__remove {
+    width: inherit;
+    height: inherit;
+    margin-right: -.25rem;
+  }
+}
