@@ -10,7 +10,9 @@ import {
   TableRow,
   TableRowColumn,
   TableRowColumnActions,
-  DropdownButton,
+  Dropdown,
+  Button,
+  Menu,
   MenuItem,
 } from './../lib';
 import { Icon } from '../lib/components/Icon/index';
@@ -64,11 +66,15 @@ storiesOf('Table', module)
               <TableRow key={record[0]} selected={idx === 2}>
                 {hasActions &&
                   <TableRowColumnActions>
-                    <DropdownButton>
-                      <Icon category="utility" icon="down" size="x-small" />
-                      <MenuItem>Edit</MenuItem>
-                      <MenuItem>Delete</MenuItem>
-                    </DropdownButton>
+                    <Dropdown>
+                      <Button type="icon-border">
+                        <Icon category="utility" icon="down" align="medium" size="x-small" />
+                      </Button>
+                      <Menu>
+                        <MenuItem>Edit</MenuItem>
+                        <MenuItem>Delete</MenuItem>
+                      </Menu>
+                    </Dropdown>
                   </TableRowColumnActions>
                 }
                 {headerNames.map((name, i) => (
@@ -96,7 +102,7 @@ storiesOf('Table', module)
           {records.map(record => (
             <TableRow key={record[0]}>
               {headerNames.map((name, i) => (
-                <TableRowColumn key={name} truncate={false}>{record[i]}</TableRowColumn>
+                <TableRowColumn key={name} shouldTruncate={false}>{record[i]}</TableRowColumn>
               ))}
             </TableRow>
           ))}
