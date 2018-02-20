@@ -1,8 +1,8 @@
 {
   "name": "@svmx/ui-components-lightning",
-  "version": "2.5.8",
+  "version": "0.1.12",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
-  "main": "dist/scripts/index.js",
+  "main": "lib/index.js",
   "keywords": [
     "react",
     "react-component",
@@ -26,7 +26,6 @@
     "test": "jest",
     "test-junit-report": "mkdir -p report && CI=true JEST_JUNIT_OUTPUT=report/junit.xml jest --ci --testResultsProcessor ./node_modules/jest-junit",
     "test:watch": "npm run test -- --watch",
-    "prepare": "npm run build",
     "lint": "eslint lib; exit 0",
     "lint-fix": "eslint lib --fix; exit 0",
     "lint-style": "stylelint --f string --syntax scss lib/**/*.scss; exit 0",
@@ -36,8 +35,7 @@
     "lint:watch": "esw -w lib/**",
     "watch": "esw -w lib/**;babel lib -w -d dist",
     "lint:stories": "eslint --ext .js stories/**",
-    "postinstall": "npm run build",
-    "build": "babel -d dist/ lib/",
+    "build": "babel -d lib/",
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
     "sonar-scan": "sonar-scanner -Dsonar.issuesReport.html.enable=true && open .scannerwork/issues-report/issues-report.html"

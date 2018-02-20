@@ -22,9 +22,11 @@
   },
   "rules": {
     "arrow-parens": "off",
+    "class-methods-use-this": "off",
     "generator-star-spacing": "off",
     "import/no-unresolved": ["warn"],
     "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
     "import/extensions": ["warn", { "js": "never" }],
     "import/no-named-as-default": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js"] }],

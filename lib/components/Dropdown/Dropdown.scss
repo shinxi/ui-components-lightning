@@ -1,0 +1,14 @@
+.Dropdown {
+  .slds-dropdown-trigger:hover {
+    .slds-dropdown--menu.react-slds-no-hover-popup {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  .slds-dropdown-trigger.react-slds-dropdown-opened {
+    .slds-dropdown--menu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

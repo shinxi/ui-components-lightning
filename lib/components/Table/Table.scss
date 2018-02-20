@@ -1,0 +1,19 @@
+.TableWrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+// block--mod
+.Table--auto-width { 
+  width: auto;
+}
+
+// block__elem--mod
+.Table__row--selected {
+  background-color: #F8FCF5;
+  border-left: 2px solid #7db450;
+}
+
+.Table__row--column {
+  position: static;
+}
