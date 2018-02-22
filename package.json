@@ -1,6 +1,6 @@
 {
-  "name": "@svmx/ui-components-lightning",
-  "version": "0.1.12",
+  "name": "@svmx/ui-components-lightning-josh",
+  "version": "0.1.14",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "lib/index.js",
   "keywords": [
@@ -41,7 +41,9 @@
     "sonar-scan": "sonar-scanner -Dsonar.issuesReport.html.enable=true && open .scannerwork/issues-report/issues-report.html"
   },
   "files": [
-    "dist"
+    "lib",
+    "stories",
+    "scripts"
   ],
   "author": "ServiceMax",
   "license": "MIT",
