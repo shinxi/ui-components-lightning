@@ -55,7 +55,7 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
-    "@salesforce-ux/design-system": "^2.2.1",
+    "@salesforce-ux/design-system": "^2.5.2",
     "@storybook/addon-actions": "^3.3.11",
     "@storybook/addon-info": "^3.3.11",
     "@storybook/addon-knobs": "^3.2.17",

@@ -1,2 +1,4 @@
 // Vendor Styles (salesforce design-system)
+$static-image-path: '/assets/images' !default;
+$static-font-path: '/assets/fonts/webfonts' !default;
 @import '@salesforce-ux/design-system/scss/index';
