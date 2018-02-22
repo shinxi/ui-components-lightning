@@ -1,6 +1,6 @@
 {
   "name": "@svmx/ui-components-lightning",
-  "version": "0.1.13",
+  "version": "0.1.20",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "lib/index.js",
   "scripts": {
@@ -24,19 +24,17 @@
     "build-storybook": "build-storybook",
     "sonar-scan": "sonar-scanner -Dsonar.issuesReport.html.enable=true && open .scannerwork/issues-report/issues-report.html"
   },
-  "files": [
-    "lib",
-    "scripts",
-    "stories"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ServiceMax-Engineering/ui-components-lightning.git"
-  },
   "author": "ServiceMax",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ServiceMax-Engineering/ui-components-lightning/issues"
+  "license": "LicenseRef-LICENSE",
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.5.2",
+    "babel-runtime": "^6.6.1",
+    "classnames": "^2.2.5",
+    "keycoder": "^1.1.1",
+    "moment": "^2.13.0",
+    "react-relative-portal": "github:stomita/react-relative-portal#dist",
+    "svg4everybody": "^2.0.3",
+    "uuid": "^2.0.2"
   },
   "homepage": "https://github.com/ServiceMax-Engineering/ui-components-lightning#readme",
   "keywords": [
@@ -52,7 +50,6 @@
     "modal"
   ],
   "devDependencies": {
-    "@salesforce-ux/design-system": "^2.2.1",
     "@storybook/addon-actions": "^3.3.11",
     "@storybook/addon-info": "^3.3.11",
     "@storybook/addon-knobs": "^3.2.17",
