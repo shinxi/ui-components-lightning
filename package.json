@@ -1,6 +1,6 @@
 {
   "name": "@svmx/ui-components-lightning-josh",
-  "version": "0.1.15",
+  "version": "0.1.18",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "lib/index.js",
   "keywords": [
@@ -40,14 +40,10 @@
     "build-storybook": "build-storybook",
     "sonar-scan": "sonar-scanner -Dsonar.issuesReport.html.enable=true && open .scannerwork/issues-report/issues-report.html"
   },
-  "files": [
-    "lib",
-    "stories",
-    "scripts"
-  ],
   "author": "ServiceMax",
-  "license": "MIT",
+  "license": "LicenseRef-LICENSE",
   "dependencies": {
+    "@salesforce-ux/design-system": "^2.5.2",
     "babel-runtime": "^6.6.1",
     "classnames": "^2.2.5",
     "keycoder": "^1.1.1",
@@ -57,7 +53,6 @@
     "uuid": "^2.0.2"
   },
   "devDependencies": {
-    "@salesforce-ux/design-system": "^2.5.2",
     "@storybook/addon-actions": "^3.3.11",
     "@storybook/addon-info": "^3.3.11",
     "@storybook/addon-knobs": "^3.2.17",
