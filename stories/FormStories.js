@@ -7,6 +7,7 @@ import {
   Checkbox,
   CheckboxGroup,
   FieldSet,
+  FieldSetRow,
   Form,
   FormElement,
   Input,
@@ -18,8 +19,6 @@ import {
   Textarea,
   Toggle,
 } from './../lib';
-
-const { Row } = FieldSet;
 
 storiesOf('Form', module)
   .add(
@@ -119,7 +118,7 @@ storiesOf('Form', module)
     withInfo('Compound Form')(() => (
       <Form type="compound" onSubmit={action('submit')}>
         <FieldSet label="Name">
-          <Row cols={8}>
+          <FieldSetRow cols={8}>
             <FormElement cols={2}>
               <Label>First Name</Label>
               <Input type="text" placeholder="Input first name here" />
@@ -128,22 +127,22 @@ storiesOf('Form', module)
               <Label>Last Name</Label>
               <Input type="text" placeholder="Input last name here" />
             </FormElement>
-          </Row>
+          </FieldSetRow>
         </FieldSet>
         <FieldSet label="Address">
-          <Row>
+          <FieldSetRow>
             <FormElement>
               <Label>Street</Label>
               <Textarea rows="2" placeholder="Input street here" />
             </FormElement>
-          </Row>
-          <Row cols={6}>
+          </FieldSetRow>
+          <FieldSetRow cols={6}>
             <FormElement cols={1}>
               <Label>City</Label>
               <Input placeholder="Input city here" />
             </FormElement>
-          </Row>
-          <Row>
+          </FieldSetRow>
+          <FieldSetRow>
             <FormElement>
               <Label>State</Label>
               <Select defaultValue={1}>
@@ -166,10 +165,10 @@ storiesOf('Form', module)
                 </Option>
               </Select>
             </FormElement>
-          </Row>
+          </FieldSetRow>
         </FieldSet>
         <FieldSet label="Other">
-          <Row>
+          <FieldSetRow>
             <FormElement>
               <Label>Gender</Label>
               <RadioGroup name="gender">
@@ -186,7 +185,7 @@ storiesOf('Form', module)
                 <Checkbox label="Phone" value="3" />
               </CheckboxGroup>
             </FormElement>
-          </Row>
+          </FieldSetRow>
         </FieldSet>
       </Form>
     )),

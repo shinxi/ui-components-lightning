@@ -3,22 +3,6 @@
   "version": "0.1.20",
   "description": "ServiceMax Customization to Salesforce Lightning Design System components built with React",
   "main": "lib/index.js",
-  "keywords": [
-    "react",
-    "react-component",
-    "salesforce",
-    "lightning",
-    "lightning design system",
-    "slds",
-    "tab",
-    "form",
-    "datepicker",
-    "modal"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ServiceMax-Engineering/ui-components-lightning.git"
-  },
   "scripts": {
     "cov": "jest --coverage",
     "cov:open": "open coverage/lcov-report/index.html",
@@ -33,7 +17,7 @@
     "lint-js-report": "eslint -f checkstyle lib > report/eslint.xml; exit 0",
     "lint-style-report": "stylelint --custom-formatter=scripts/stylelintCheckStyleFormatter --syntax scss lib/**/*.scss > report/stylelint.xml",
     "lint:watch": "esw -w lib/**",
-    "watch": "esw -w lib/**;babel lib -w -d dist",
+    "watch": "esw -w lib/**;babel lib -w -d build",
     "lint:stories": "eslint --ext .js stories/**",
     "build": "babel -d lib/",
     "storybook": "start-storybook -s ./node_modules/@salesforce-ux/design-system -p 9001 -c .storybook",
@@ -52,6 +36,19 @@
     "svg4everybody": "^2.0.3",
     "uuid": "^2.0.2"
   },
+  "homepage": "https://github.com/ServiceMax-Engineering/ui-components-lightning#readme",
+  "keywords": [
+    "react",
+    "react-component",
+    "salesforce",
+    "lightning",
+    "lightning design system",
+    "slds",
+    "tab",
+    "form",
+    "datepicker",
+    "modal"
+  ],
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.11",
     "@storybook/addon-info": "^3.3.11",
@@ -97,6 +94,15 @@
     "stylelint-config-sass-guidelines": "^3.1.0",
     "stylelint-config-standard": "^17.0.0",
     "yargs": "^9.0.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.6.1",
+    "classnames": "^2.2.5",
+    "keycoder": "^1.1.1",
+    "moment": "^2.13.0",
+    "react-relative-portal": "github:stomita/react-relative-portal#dist",
+    "svg4everybody": "^2.0.3",
+    "uuid": "^2.0.2"
   },
   "env": {
     "test": {
